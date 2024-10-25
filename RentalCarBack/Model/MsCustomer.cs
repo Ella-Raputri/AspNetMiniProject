@@ -24,6 +24,7 @@ public class MsCustomer
     public string Name { get; set; }
 
     [Column("phone_number")]
+    [RegularExpression(@"^\d+$", ErrorMessage = "Phone number must contain only digits.")]
     [MaxLength(50)]
     public string PhoneNumber { get; set; }
 

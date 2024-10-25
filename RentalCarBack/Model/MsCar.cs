@@ -27,14 +27,14 @@ public class MsCar
     public string LicensePlate { get; set; }
 
     [Column("number_of_car_seats")]
-    public int? NumberOfCarSeats { get; set; } 
+    public int NumberOfCarSeats { get; set; } 
 
     [Column("transmission")]
     [MaxLength(100)]
     public string Transmission { get; set; }
 
     [Column("price_per_day")]
-    public decimal? PricePerDay { get; set; } 
+    public decimal PricePerDay { get; set; } 
 
     [Column("status")]
     public bool? Status { get; set; }

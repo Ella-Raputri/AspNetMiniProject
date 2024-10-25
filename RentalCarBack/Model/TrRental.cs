@@ -15,7 +15,7 @@ public class TrRental
     public DateTime RentalDate { get; set; } 
 
     [Column("return_date")]
-    public DateTime? ReturnDate { get; set; } 
+    public DateTime ReturnDate { get; set; } 
 
     [Column("total_price")]
     public decimal? TotalPrice { get; set; } 
