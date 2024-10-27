@@ -1,4 +1,14 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@using Microsoft.AspNetCore.Mvc.Rendering
+@using Microsoft.AspNetCore.Http
+
+@{
+    // Use a code block to retrieve session variables
+    var customerId = Context.Session.GetString("CustomerId");
+    var customerName = Context.Session.GetString("CustomerName");
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -43,16 +53,16 @@
         }
 
         .navbar-links a {
-        text-decoration: none;
-        color: #ffffff;
-        background-color: #ff8484; /* Light red/pink button background */
-        padding: 5px 10px;
-        border-radius: 5px;
-        transition: background-color 0.3s;
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #ff8484; /* Light red/pink button background */
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
         }
 
         .navbar-links a:hover {
-        background-color: #e58a8a; /* Darker shade for hover */
+            background-color: #e58a8a; /* Darker shade for hover */
         }
 
         /* Sidebar styling */
@@ -94,6 +104,18 @@
         .sidebar-open {
             width: 250px;
         }
+        
+        .footer {
+            text-align: center;
+            background-color: #e4d1f5;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            margin-top: 100px;
+        }
+
+        #userGreeting{
+            margin-left: 60%;
+        }
     </style>
 </head>
 <body>
@@ -103,16 +125,18 @@
                 <span class="material-icons">menu</span>
             </button>
             <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">RentCar</a>
+
+            <span id="userGreeting"></span>
             <div class="navbar-links">
-                @if (User.Identity.IsAuthenticated)
+                @if (!string.IsNullOrEmpty(customerId) || !string.IsNullOrEmpty(customerName))
                 {
-                    <span>Welcome, @User.Identity.Name!</span> <!-- Display user's name -->
+                    <span>Hi, @customerName!</span> <!-- Display user's name -->
                     <a asp-area="" asp-controller="Account" asp-action="Logout">Logout</a> <!-- Optional: Add a logout link -->
                 }
                 else
                 {
-                    <a asp-area="" asp-controller="Account" asp-action="Login">Login</a>
-                    <a asp-area="" asp-controller="Account" asp-action="Register">Registrasi</a>
+                    <a id='loginButton' asp-area="" asp-controller="User" asp-action="Login">Login</a>
+                    <a id='registerButton' asp-area="" asp-controller="User" asp-action="Register">Registrasi</a>
                 }
             </div>
         </nav>
@@ -141,6 +165,14 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const customerName = sessionStorage.getItem('CustomerName');
+            if (customerName) {
+                document.getElementById('userGreeting').innerText = `Hi, ${customerName}!`;
+                document.getElementById('loginButton').style.display = 'none';
+                document.getElementById('registerButton').style.display = 'none';
+            }
+        });
         function openSidebar() {
             document.getElementById('sidebar').classList.add('sidebar-open');
         }

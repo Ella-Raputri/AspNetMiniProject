@@ -1,0 +1,58 @@
+﻿@{
+    ViewData["Title"] = "Log In";
+}
+<h1>@ViewData["Title"]</h1>
+
+@model RentalCarFront.Models.Input.LoginUserRequest
+
+<form id="loginForm">
+    <div>
+        <label for="name">Username:</label>
+        <input type="text" id="name" name="name" required />
+    </div>
+    <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required />
+    </div>
+    <button type="submit">Login</button>
+    <p>Belum punya akun? <a id='registerButton' asp-area="" asp-controller="User" asp-action="Register">Registrasi</a></p>
+</form>
+
+<div id="loginMessage"></div>
+
+@section Scripts {
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const password = document.getElementById('password').value;
+
+            try {
+                const response = await fetch('http://localhost:7100/api/Rental/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ name, password }),
+                });
+
+                const result = await response.json();
+                console.log(result);
+
+                if (response.ok) {
+                    // Redirect or perform other actions on successful login
+                    sessionStorage.setItem('CustomerName', result.data.userData.name);
+                    
+                    window.location.href = '/Home/Index'; // Change this as needed
+
+                } else {
+                    document.getElementById('loginMessage').innerText = result.message || 'Login failed. Please try again or register your account if you do not have an account yet.';
+                }
+            } catch (error) {
+                document.getElementById('loginMessage').innerText = 'An error occurred. Please try again later.';
+                console.error('Error during login:', error);
+            }
+        });
+    </script>
+}

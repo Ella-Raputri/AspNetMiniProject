@@ -125,85 +125,123 @@ namespace RentalCarBack.Controllers
 
 
         // Login customer
-        [HttpPost("login")]
-        public async Task<ActionResult<ApiResponse<string>>> Login([FromBody] LoginCustomerRequest request)
+       [HttpPost("login")]
+        public async Task<ActionResult<ApiResponse<LoginResponse>>> Login([FromBody] LoginCustomerRequest request)
         {
+            // Check if the model state is valid
             if (!ModelState.IsValid)
             {
-                return BadRequest(new ApiResponse<string>
+                return BadRequest(new ApiResponse<LoginResponse>
                 {
                     StatusCode = StatusCodes.Status400BadRequest,
                     RequestMethod = HttpContext.Request.Method,
-                    Data = "Invalid login request."
+                    Data = new LoginResponse
+                    {
+                        Message = "Invalid login request."
+                    }
                 });
             }
 
+            // Attempt to find the customer by name (or email if that’s the intended logic)
             var customer = await _context.MsCustomer
-                .FirstOrDefaultAsync(c => c.Name == request.Name);
+                .FirstOrDefaultAsync(c => c.Name == request.Name); // Ensure you want to use Name for login
 
+            // Check if the customer exists
             if (customer == null)
             {
-                return Unauthorized(new ApiResponse<string>
+                return Unauthorized(new ApiResponse<LoginResponse>
                 {
                     StatusCode = StatusCodes.Status401Unauthorized,
                     RequestMethod = HttpContext.Request.Method,
-                    Data = "Invalid email or password."
+                    Data = new LoginResponse
+                    {
+                        Message = "Invalid email or password."
+                    }
                 });
             }
 
+            // Validate the password
             bool isPasswordValid = false;
-            if (customer.Password.StartsWith("$2a$") || customer.Password.StartsWith("$2b$") || customer.Password.StartsWith("$2y$")){
+            if (customer.Password.StartsWith("$2a$") || customer.Password.StartsWith("$2b$") || customer.Password.StartsWith("$2y$"))
+            {
                 isPasswordValid = BCrypt.Net.BCrypt.Verify(request.Password, customer.Password);
             }
-            else{
+            else
+            {
                 isPasswordValid = request.Password == customer.Password;
             }
-            
+
+            // If password is invalid, return unauthorized
             if (!isPasswordValid)
             {
-                return Unauthorized(new ApiResponse<string>
+                return Unauthorized(new ApiResponse<LoginResponse>
                 {
                     StatusCode = StatusCodes.Status401Unauthorized,
                     RequestMethod = HttpContext.Request.Method,
-                    Data = "Invalid email or password."
+                    Data = new LoginResponse
+                    {
+                        Message = "Invalid email or password."
+                    }
                 });
             }
 
+            // Create claims for the authenticated user
             var claims = new List<Claim>
             {
                 new Claim(ClaimTypes.NameIdentifier, customer.CustomerId),
-                new Claim(ClaimTypes.Name, customer.Name),
+                new Claim(ClaimTypes.Name, customer.Name)
             };
 
+            // Create claims identity and principal
             var claimsIdentity = new ClaimsIdentity(claims, "Cookies");
             var claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
 
+            // Sign in the user
             await HttpContext.SignInAsync("Cookies", claimsPrincipal);
+            
+            // Set session values
             HttpContext.Session.SetString("CustomerId", customer.CustomerId);
             HttpContext.Session.SetString("CustomerName", customer.Name);
 
-            return Ok(new ApiResponse<string>
+            // Return success response with structured message
+            return Ok(new ApiResponse<LoginResponse>
             {
                 StatusCode = StatusCodes.Status200OK,
                 RequestMethod = HttpContext.Request.Method,
-                Data = "Login successful."
+                Data = new LoginResponse
+                {
+                    Message = "Login successful.",
+                    UserData = new GetCustomerInformation 
+                    {
+                        CustomerId = customer.CustomerId,
+                        Name = customer.Name,
+                        Email = customer.Email,
+                        PhoneNumber = customer.PhoneNumber,
+                        Address = customer.Address
+                        // Add any other user-related info you want to return
+                    }
+                }
             });
         }
+
 
 
         // Get current customer 
         [HttpGet("current-customer")]
         public async Task<ActionResult<GetCustomerInformation>> GetCurrentCustomer()
         {
-            try{
-                var userID = User.FindFirstValue(ClaimTypes.NameIdentifier);
-                if(string.IsNullOrEmpty(userID)){
-                    return Unauthorized("User not logged in.");
-                }
+            if (!User.Identity.IsAuthenticated)
+            {
+                return Unauthorized("User not logged in.");
+            }
 
+            try
+            {
+                var userID = User.FindFirstValue(ClaimTypes.NameIdentifier);
                 var userData = await _context.MsCustomer
                     .Where(c => c.CustomerId == userID)
-                    .Select(c => new GetCustomerInformation{
+                    .Select(c => new GetCustomerInformation
+                    {
                         CustomerId = c.CustomerId,
                         Name = c.Name,
                         Email = c.Email,
@@ -211,28 +249,21 @@ namespace RentalCarBack.Controllers
                         Address = c.Address
                     }).FirstOrDefaultAsync();
                 
-                if(userData == null){
+                if (userData == null)
+                {
                     return NotFound("Customer not found.");
                 }
 
-                var response = new ApiResponse<GetCustomerInformation>
+                return Ok(new ApiResponse<GetCustomerInformation>
                 {
                     StatusCode = StatusCodes.Status200OK,
                     RequestMethod = HttpContext.Request.Method,
                     Data = userData
-                };
-
-                return Ok(response);
+                });
             }
-
-            catch(Exception e){
-                var response = new ApiResponse<string>
-                {
-                    StatusCode = StatusCodes.Status500InternalServerError,
-                    RequestMethod = HttpContext.Request.Method,
-                    Data = e.Message 
-                };
-                return StatusCode(StatusCodes.Status500InternalServerError, response);
+            catch (Exception e)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, e.Message);
             }
         }
 

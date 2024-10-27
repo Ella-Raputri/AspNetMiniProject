@@ -1,0 +1,84 @@
+﻿@{
+    ViewData["Title"] = "Register Account";
+}
+<h1>@ViewData["Title"]</h1>
+
+@model RentalCarFront.Models.Input.CreateUserRequest
+
+<form id="registerForm">
+    <div>
+        <label for="name">Nama Lengkap:</label>
+        <input type="text" id="fullName" name="name" required />
+    </div>
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+    </div>
+    <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required />
+    </div>
+    <div>
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required />
+    </div>
+    <div>
+        <label for="phoneNumber">Nomor Telepon:</label>
+        <input type="text" id="phoneNumber" name="phoneNumber" required />
+    </div>
+    <div>
+        <label for="address">Alamat:</label>
+        <input type="text" id="address" name="address" required />
+    </div>
+    <button type="submit">Register</button>
+
+    <p>Sudah punya akun? <a id='loginButton' asp-area="" asp-controller="User" asp-action="Login">Login</a></p>
+</form>
+
+<div id="registerMessage"></div>
+
+@section Scripts {
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const fullName = document.getElementById('fullName').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const phoneNumber = document.getElementById('phoneNumber').value;
+            const address = document.getElementById('address').value;
+
+            try {
+                const response = await fetch('http://localhost:7100/api/Rental', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ 
+                        name: fullName, 
+                        email, 
+                        password, 
+                        confirmPassword, 
+                        phoneNumber, 
+                        address 
+                    }),
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    // Store the user's name in session storage
+                    sessionStorage.setItem('CustomerName', fullName);
+                    // Redirect to home page or any other page
+                    window.location.href = '/Home/Index'; 
+                } else {
+                    document.getElementById('registerMessage').innerText = result.message || 'Registration failed. Please try again.';
+                }
+            } catch (error) {
+                document.getElementById('registerMessage').innerText = 'An error occurred. Please try again later.';
+                console.error('Error during registration:', error);
+            }
+        });
+    </script>
+}
