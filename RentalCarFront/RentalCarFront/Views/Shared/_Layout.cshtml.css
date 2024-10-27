@@ -1,0 +1,20 @@
+﻿.footer{
+  text-align: center;
+  background-color: #e4d1f5;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  margin-top: 100px;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 10px;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .navbar-links {
+    display: block;
+    gap: 10px;
+  }
+}

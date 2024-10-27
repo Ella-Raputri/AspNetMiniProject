@@ -1,0 +1,19 @@
+@media only screen and (max-width: 968px){
+  .filter {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .filter div {
+    width: 30%;
+    margin-bottom: 1rem;
+  }
+
+  .filter input,
+  .filter select {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+  }
+}
+

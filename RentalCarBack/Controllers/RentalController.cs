@@ -288,7 +288,7 @@ namespace RentalCarBack.Controllers
         }
 
         // Insert rental/booking history
-        [HttpPost]
+        [HttpPost("Booking")]
         public async Task<IActionResult> PostRental([FromBody] CreateRentalHistoryRequest request){
             try{
                 if (!ModelState.IsValid){
@@ -385,11 +385,6 @@ namespace RentalCarBack.Controllers
 
             return Ok(paymentData);
         }
-
-
-
-
-
 
     }
 }

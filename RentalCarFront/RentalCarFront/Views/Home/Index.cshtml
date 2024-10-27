@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/home.css" /> <!-- Link to the external CSS file -->
+</head>
+<body>
+    <div class="title">
+        <h1>Selamat Datang di Rental Mobil Kami</h1>
+    </div>
+
+    <div class="filter">
+        <div class="date1">
+            <label for="pickUpDate">Pickup Date:</label>
+            <input type="date" id="pickUpDate" name="pickUpDate" class="form-control" />
+        </div>
+        
+        <div class="date2">
+            <label for="returnDate">Return Date:</label>
+            <input type="date" id="returnDate" name="returnDate" class="form-control" />
+        </div>
+        
+        <div class="filter3">
+            <label for="carYear">Filter Tahun Pembuatan:</label>
+            <select name="carYear" id="carYear">
+                <option value="Semua Tahun" selected>Semua Tahun</option>
+                <option value="2015">2015</option>
+                <option value="2016">2016</option>
+                <option value="2017">2017</option>
+                <option value="2018">2018</option>
+                <option value="2019">2019</option>
+            </select>
+        </div>
+
+        <div class="button-wrapper">
+            <button class="cari">
+                <a href="">Cari</a>
+            </button>
+        </div>
+    </div>
+</body>
+</html>

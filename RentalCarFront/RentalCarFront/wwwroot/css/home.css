@@ -1,0 +1,99 @@
+.title {
+  text-align: center;
+  color: #4a4a4a;
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.filter {
+  background-color: rgb(199, 229, 250);
+  padding: 1rem;
+  border-radius: 5px;
+  display: flex; 
+  justify-content: flex-start; 
+  margin-left: 1rem;
+  margin-right: 1rem;
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+}
+
+.filter div {
+  display: flex;
+  flex-direction: column;
+  width: 20%; 
+  margin-bottom: 0; 
+}
+
+
+.filter label {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.filter input,
+.filter select {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 75%;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: center; 
+  align-items: flex-end; 
+  width: 20%; 
+  margin-left: 0.1rem; /* Adjust this value to control spacing from input fields */
+  margin-top: 0.5rem; /* Add a top margin to reduce space above the button */
+}
+
+.filter button {
+  width: auto; /* Set width to auto for the button */
+  border: none; /* Remove border */
+  background-color: #ff8484; /* Button background color */
+  color: #ffffff; /* Text color */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Change cursor on hover */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+  margin-top: 0; /* Ensure no additional margin is applied to the button */
+}
+
+
+.filter button:hover {
+  background-color: #e58a8a; /* Darker shade for hover */
+}
+
+.cari a {
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #ff8484; /* Light red/pink button background */
+  padding: 10px;
+  border-radius: 5px;
+  display: block; /* Make the anchor tag a block element */
+}
+
+.cari a:hover {
+  background-color: #e58a8a; /* Darker shade for hover */
+}
+
+@media (max-width: 968px) {
+  .filter div {
+      width: 100%; /* Make each filter take full width on smaller screens */
+      margin-bottom: 1rem; /* Add margin for spacing between rows */
+  }
+  .filter input {
+      width: 95%; /* Full width for inputs on smaller screens */
+  }
+  .filter select {
+      width: 98%;
+  }
+  .button-wrapper {
+      width: 100%; /* Full width for button wrapper on small screens */
+      margin-left: 0; /* Remove left margin on small screens */
+  }
+  .filter button {
+      width: 80%; /* Width for button on smaller screens */
+      margin-left: auto;
+      margin-right: auto;
+  }
+}
