@@ -52,14 +52,14 @@ public class UserHandler : IUser
 
     public async Task<ApiResponse<IEnumerable<GetUserOutput>>> GetCurrentUser(){
         string endpoint = baseURL +"/Rental/current-customer";
-        var studentOutput = new ApiResponse<IEnumerable<GetUserOutput>>();
+        var userOutput = new ApiResponse<IEnumerable<GetUserOutput>>();
         var response = await httpClient.GetAsync(endpoint);
 
         string apiresponse = await response.Content.ReadAsStringAsync();
         if(!string.IsNullOrEmpty(apiresponse)){
-            studentOutput = JsonConvert.DeserializeObject<ApiResponse<IEnumerable<GetUserOutput>>>(apiresponse);
+            userOutput = JsonConvert.DeserializeObject<ApiResponse<IEnumerable<GetUserOutput>>>(apiresponse);
         }
 
-        return studentOutput;
+        return userOutput;
     }
 }

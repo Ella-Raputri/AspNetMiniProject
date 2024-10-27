@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"]</title>
-    <link rel="stylesheet" href="~/css/home.css" /> <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="~/css/home.css" />
 </head>
 <body>
     <div class="title">
@@ -29,7 +29,7 @@
         <div class="filter3">
             <label for="carYear">Filter Tahun Pembuatan:</label>
             <select name="carYear" id="carYear">
-                <option value="Semua Tahun" selected>Semua Tahun</option>
+                <option value="0">Semua Tahun</option>
                 <option value="2015">2015</option>
                 <option value="2016">2016</option>
                 <option value="2017">2017</option>
@@ -39,10 +39,208 @@
         </div>
 
         <div class="button-wrapper">
-            <button class="cari">
-                <a href="">Cari</a>
+            <button class="cari" onclick="fetchAvailableCars()">
+                Cari
             </button>
         </div>
     </div>
+
+    <div id="availableCars" class="car-list"></div>
+    <div id="paginationControls" class="pagination-controls"></div>
+
+    <script>
+        let currentPage = 1;
+        const itemsPerPage = 3;
+
+       async function fetchAvailableCars() {
+            try {
+                const pickUpDate = document.getElementById('pickUpDate').value;
+                const returnDate = document.getElementById('returnDate').value;
+                const carYear = document.getElementById('carYear').value;
+                const yearQuery = carYear !== 'Semua Tahun' ? `&year=${carYear}` : '';
+
+                const response = await fetch(`http://localhost:7100/api/Rental/available-cars?dateA=${pickUpDate}&dateB=${returnDate}${yearQuery}`, {
+                    method: 'GET',
+                    credentials: 'include'
+                });
+
+                const result = await response.json();
+
+                if (response.ok && result.data) {
+                    displayCars(result.data);
+                } else {
+                    console.error('No data found:', result);
+                    document.getElementById('availableCars').innerHTML = 'No available cars for the selected dates.';
+                }
+            } catch (error) {
+                console.error('Error fetching available cars:', error);
+            }
+        }
+
+        function displayCars(cars) {
+            // Ensure that 'cars' is an array
+            if (!Array.isArray(cars) || cars.length === 0) {
+                document.getElementById('availableCars').innerHTML = 'No available cars for the selected dates.';
+                return;
+            }
+
+            const carsContainer = document.getElementById('availableCars');
+            carsContainer.innerHTML = '';
+
+            // Determine the number of cars to display per page
+            const carsPerPage = 3;
+            const totalPages = Math.ceil(cars.length / carsPerPage);
+            let currentPage = 1;
+
+            function renderPage(page) {
+                carsContainer.innerHTML = '';
+
+                // Calculate start and end index
+                const startIndex = (page - 1) * carsPerPage;
+                const endIndex = startIndex + carsPerPage;
+
+                // Slice the cars array to get the current page of cars
+                const carsToDisplay = cars.slice(startIndex, endIndex);
+
+                carsToDisplay.forEach(car => {
+                    carsContainer.innerHTML += `
+                        <div class="car-card">
+                            <img src="${car.carImageLink}" alt="${car.name}" class="car-image">
+                            <h3>${car.name}</h3>
+                            <p>Price per day: ${car.pricePerDay}</p>
+                        </div>
+                    `;
+                });
+
+                // Render pagination controls if there is more than one page
+                const paginationControls = document.getElementById('paginationControls');
+                paginationControls.innerHTML = '';
+
+                for (let i = 1; i <= totalPages; i++) {
+                    const pageButton = document.createElement('button');
+                    pageButton.textContent = i;
+                    pageButton.classList.add('page-button');
+                    if (i === page) {
+                        pageButton.classList.add('active');
+                    }
+                    pageButton.addEventListener('click', () => renderPage(i));
+                    paginationControls.appendChild(pageButton);
+                }
+            }
+
+            // Render the first page initially
+            renderPage(currentPage);
+        }
+
+    </script>
+
+    <style>
+        /* Basic styling for the title */
+.title {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.title h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+/* Styling for the filter section */
+.filter {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+.date1, .date2, .filter3 {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.button-wrapper {
+    align-self: center;
+}
+
+.cari {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.cari:hover {
+    background-color: #45a049;
+}
+
+/* Styling for the car listing */
+.car-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    margin: 20px;
+}
+
+.car-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px; /* Adjust the width of each card */
+    padding: 15px;
+    text-align: center;
+}
+
+.car-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.car-card h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.car-card p {
+    margin: 5px 0;
+    color: #666;
+}
+
+/* Styling for pagination controls */
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 5px;
+}
+
+.page-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.page-button.active {
+    background-color: #45a049;
+}
+
+.page-button:hover {
+    background-color: #388e3c;
+}
+
+    </style>
 </body>
 </html>

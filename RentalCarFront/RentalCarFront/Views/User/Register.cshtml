@@ -70,6 +70,7 @@
                 if (response.ok) {
                     // Store the user's name in session storage
                     sessionStorage.setItem('CustomerName', fullName);
+                    sessionStorage.setItem('CustomerId', result.data.userData.customerId);
                     // Redirect to home page or any other page
                     window.location.href = '/Home/Index'; 
                 } else {

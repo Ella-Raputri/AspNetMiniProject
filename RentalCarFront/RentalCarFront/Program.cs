@@ -32,6 +32,8 @@ builder.Services.AddAuthentication("Cookies") // Replace with your scheme name
 
 // Register your services
 builder.Services.AddScoped<IUser, UserHandler>();
+builder.Services.AddScoped<IRiwayat, RiwayatHandler>();
+builder.Services.AddScoped<ICar, HomeHandler>();
 
 var app = builder.Build();
 

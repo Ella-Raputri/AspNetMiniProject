@@ -7,13 +7,13 @@ var builder = WebApplication.CreateBuilder(args);
 // Configure CORS
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAllOrigins", builder =>
-    {
-        builder.AllowAnyOrigin()   // Allow any origin
-               .AllowAnyMethod()   // Allow any method (GET, POST, etc.)
-               .AllowAnyHeader();  // Allow any header
-    });
+    options.AddPolicy("AllowSpecificOrigin",
+        builder => builder.WithOrigins("http://localhost:5222") // Replace with your frontend URL
+                          .AllowAnyMethod()
+                          .AllowAnyHeader()
+                          .AllowCredentials()); // Allow credentials
 });
+
 
 builder.Services.AddDistributedMemoryCache();
 
@@ -59,7 +59,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 // Enable CORS before Authorization and Mapping Controllers
-app.UseCors("AllowAllOrigins");
+app.UseCors("AllowSpecificOrigin");
 
 app.UseSession();
 app.UseAuthentication();

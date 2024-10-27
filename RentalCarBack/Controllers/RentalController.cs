@@ -9,6 +9,7 @@ using BCrypt.Net;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Newtonsoft.Json;
 
 namespace RentalCarBack.Controllers
 {
@@ -90,9 +91,10 @@ namespace RentalCarBack.Controllers
 
                 num += 1;
                 var newCustomerID = num.ToString("D3");
+                var newId = $"CUS{newCustomerID}";
 
                 var newCustomerData = new MsCustomer{
-                    CustomerId = $"CUS{newCustomerID}",
+                    CustomerId = newId,
                     Email = request.Email,
                     Password = BCrypt.Net.BCrypt.HashPassword(request.Password),
                     Name = request.Name,
@@ -104,10 +106,22 @@ namespace RentalCarBack.Controllers
                 _context.MsCustomer.Add(newCustomerData);
                 await _context.SaveChangesAsync();
 
-                var response = new ApiResponse<string>{
-                    StatusCode = StatusCodes.Status201Created,
+                var response = new ApiResponse<LoginResponse>
+                {
+                    StatusCode = StatusCodes.Status200OK,
                     RequestMethod = HttpContext.Request.Method,
-                    Data = "New customer account is created."
+                    Data = new LoginResponse
+                    {
+                        Message = "Register successful.",
+                        UserData = new GetCustomerInformation 
+                        {
+                            CustomerId = newId,
+                            Name = request.Name,
+                            Email = request.Email,
+                            PhoneNumber = request.PhoneNumber,
+                            Address = request.Address
+                        }
+                    }
                 };
 
                 return Ok(response);
@@ -375,12 +389,11 @@ namespace RentalCarBack.Controllers
 
         // Get rental history
         [HttpGet("Riwayat")]
-        public async Task<ActionResult<IEnumerable<GetRentalHistory>>> GetHistory()
+        public async Task<ActionResult<IEnumerable<GetRentalHistory>>> GetHistory([FromQuery] string userId)
         {
-            var userId = HttpContext.Session.GetString("CustomerId");
             if (string.IsNullOrEmpty(userId))
             {
-                return NotFound("Customer not found.");
+                return BadRequest("User ID is required.");
             }
 
             var paymentData = await _context.TrPayment
@@ -397,16 +410,26 @@ namespace RentalCarBack.Controllers
                         combined.rental,
                         car
                     })
-                .Where(data => data.rental.CustomerId == userId) // Filter by CustomerId before selecting
-                .Select(data => new GetRentalHistory
+                .Where(data => data.rental.CustomerId == userId)
+                .GroupBy(data => new
                 {
-                    RentalDate = $"{data.rental.RentalDate:dd MMMM yyyy} - {data.rental.ReturnDate:dd MMMM yyyy}",
-                    CarName = data.car.Name,
-                    PricePerDay = data.car.PricePerDay,
-                    TotalDays = (data.rental.ReturnDate - data.rental.RentalDate).Days,
-                    TotalPrice = data.car.PricePerDay * (data.rental.ReturnDate - data.rental.RentalDate).Days,
-                    Status = data.payment.PaymentDate.HasValue
+                    data.rental.RentalId,
+                    data.car.Name,
+                    data.car.PricePerDay,
+                    data.rental.RentalDate,
+                    data.rental.ReturnDate,
+                    data.payment.PaymentDate
                 })
+                .Select(g => new GetRentalHistory
+                {
+                    RentalDate = $"{g.First().rental.RentalDate:dd MMMM yyyy} - {g.First().rental.ReturnDate:dd MMMM yyyy}",
+                    CarName = g.First().car.Name,
+                    PricePerDay = g.First().car.PricePerDay,
+                    TotalDays = (g.First().rental.ReturnDate - g.First().rental.RentalDate).Days,
+                    TotalPrice = g.First().car.PricePerDay * (g.First().rental.ReturnDate - g.First().rental.RentalDate).Days,
+                    Status = g.First().payment.PaymentDate.HasValue
+                })
+                .Distinct()
                 .ToListAsync();
 
             if (!paymentData.Any())
@@ -414,8 +437,12 @@ namespace RentalCarBack.Controllers
                 return NoContent();
             }
 
+            var jsonResponse = JsonConvert.SerializeObject(paymentData);
+            Console.WriteLine(jsonResponse);
+
             return Ok(paymentData);
         }
+
 
     }
 }

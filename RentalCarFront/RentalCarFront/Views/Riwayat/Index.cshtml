@@ -1,5 +1,52 @@
-﻿<div class="row">
-    <div class="col">
-        <h1>Student Data With Major</h1>
-    </div>
-</div>
+﻿@{
+    ViewData["Title"] = "Riwayat Penyewaan";
+}
+<h1>@ViewData["Title"]</h1>
+
+<div id="rentalHistory"></div>
+<div id="noDataMessage" style="display:none;">Data not found. Please log in to view your rental history.</div>
+
+@section Scripts {
+    <script>
+        const userId = sessionStorage.getItem('CustomerId'); // Assuming you store userId in sessionStorage
+
+        async function fetchRentalHistory() {
+            try {
+                const response = await fetch(`http://localhost:7100/api/Rental/Riwayat?userId=${userId}`, {
+                    method: 'GET',
+                    credentials: 'include' // Include cookies in the request to access session data
+                });
+
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    const rentalHistoryContainer = document.getElementById('rentalHistory');
+                    rentalHistoryContainer.innerHTML = ''; // Clear previous content
+
+                    result.forEach(item => {
+                        rentalHistoryContainer.innerHTML += `
+                            <div class="rental-item">
+                                <p><strong>Rental Period:</strong> ${item.rentalDate}</p>
+                                <p><strong>Car Name:</strong> ${item.carName}</p>
+                                <p><strong>Price Per Day:</strong> ${item.pricePerDay}</p>
+                                <p><strong>Total Days:</strong> ${item.totalDays}</p>
+                                <p><strong>Total Price:</strong> ${item.totalPrice}</p>
+                                <p><strong>Status:</strong> ${item.status ? 'Paid' : 'Pending'}</p>
+                                <hr>
+                            </div>
+                        `;
+                    });
+                } else {
+                    document.getElementById('noDataMessage').style.display = 'block';
+                }
+            } catch (error) {
+                console.error('Error fetching rental history:', error);
+                document.getElementById('noDataMessage').style.display = 'block';
+            }
+        }
+
+        // Fetch the rental history when the page loads
+        document.addEventListener('DOMContentLoaded', fetchRentalHistory);
+    </script>
+}

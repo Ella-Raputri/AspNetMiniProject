@@ -1,16 +1,20 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using RentalCarFront.Models;
+using RentalCarFront.Models.Output;
+using RentalCarFront.Service;
 
 namespace RentalCarFront.Controllers;
 
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
+    private readonly ICar _carApi;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(ILogger<HomeController> logger, ICar carApi)
     {
         _logger = logger;
+        _carApi = carApi;
     }
 
     public IActionResult Index()
@@ -18,7 +22,7 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult Privacy()
+    public IActionResult Kontak()
     {
         return View();
     }
@@ -27,5 +31,14 @@ public class HomeController : Controller
     public IActionResult Error()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+    }
+
+    public async Task<IActionResult> GetAvailableCars(DateTime dateA, DateTime dateB, int? year = null){
+        var result = await _carApi.GetAvailableCars(dateA, dateB, year);
+        return Json(result);
+    }
+    public async Task<IActionResult> GetCarInformation(DateTime dateStart, DateTime dateEnd){
+        var result = await _carApi.GetCarInformation(dateStart, dateEnd);
+        return Json(result);
     }
 }
