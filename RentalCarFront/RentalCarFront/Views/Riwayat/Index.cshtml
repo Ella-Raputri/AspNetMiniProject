@@ -1,42 +1,58 @@
 ﻿@{
     ViewData["Title"] = "Riwayat Penyewaan";
 }
-<h1>@ViewData["Title"]</h1>
+<h1>@ViewData["Title"] Mobil</h1>
 
-<div id="rentalHistory"></div>
+<div class="table-container">
+    <table id="rentalHistoryTable" style="width: 100%; border-collapse: collapse;">
+        <thead>
+            <tr>
+                <th>Tanggal Sewa</th>
+                <th>Mobil</th>
+                <th>Harga Sewa per Hari</th>
+                <th>Total Hari</th>
+                <th>Total Harga</th>
+                <th>Status Pembayaran</th>
+            </tr>
+        </thead>
+        <tbody id="rentalHistory"></tbody>
+    </table>    
+</div>
+
 <div id="noDataMessage" style="display:none;">Data not found. Please log in to view your rental history.</div>
+
 
 @section Scripts {
     <script>
-        const userId = sessionStorage.getItem('CustomerId'); // Assuming you store userId in sessionStorage
+        const userId = sessionStorage.getItem('CustomerId'); 
 
         async function fetchRentalHistory() {
             try {
                 const response = await fetch(`http://localhost:7100/api/Rental/Riwayat?userId=${userId}`, {
                     method: 'GET',
-                    credentials: 'include' // Include cookies in the request to access session data
+                    credentials: 'include' 
                 });
 
 
                 const result = await response.json();
 
-                if (response.ok) {
+                if (response.ok && result.length > 0) {
                     const rentalHistoryContainer = document.getElementById('rentalHistory');
-                    rentalHistoryContainer.innerHTML = ''; // Clear previous content
+                    rentalHistoryContainer.innerHTML = ''; 
 
                     result.forEach(item => {
                         rentalHistoryContainer.innerHTML += `
-                            <div class="rental-item">
-                                <p><strong>Rental Period:</strong> ${item.rentalDate}</p>
-                                <p><strong>Car Name:</strong> ${item.carName}</p>
-                                <p><strong>Price Per Day:</strong> ${item.pricePerDay}</p>
-                                <p><strong>Total Days:</strong> ${item.totalDays}</p>
-                                <p><strong>Total Price:</strong> ${item.totalPrice}</p>
-                                <p><strong>Status:</strong> ${item.status ? 'Paid' : 'Pending'}</p>
-                                <hr>
-                            </div>
+                            <tr class="rental-item">
+                                <td>${item.rentalDate}</td>
+                                <td>${item.carName}</td>
+                                <td>Rp ${item.pricePerDay.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</td>
+                                <td>${item.totalDays}</td>
+                                <td>Rp ${item.totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</td>
+                                <td class="${item.status ? 'status-paid' : 'status-pending'}">${item.status ? 'Sudah Dibayar' : 'Belum Dibayar'}</td>
+                            </tr>
                         `;
                     });
+
                 } else {
                     document.getElementById('noDataMessage').style.display = 'block';
                 }
@@ -46,7 +62,72 @@
             }
         }
 
-        // Fetch the rental history when the page loads
         document.addEventListener('DOMContentLoaded', fetchRentalHistory);
     </script>
 }
+
+<style>
+h1 {
+    font-size: 24px;
+    color: #333;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.table-container {
+    margin-top: 40px;
+    overflow-x: auto;
+    margin: 0 auto; 
+    width: 80%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
+    border-radius: 8px; 
+    background-color: #fff; 
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ccc; 
+    padding: 12px; 
+    text-align: left;
+}
+
+th {
+    background-color: #898989; 
+    color: #ffffff; 
+    font-weight: bold;
+} 
+
+tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+tr:nth-child(even) {
+    background-color: #f1f1f1; 
+}
+
+tr:hover {
+    background-color: #fffde8; 
+    transition: background-color 0.3s; 
+}
+
+#noDataMessage {
+    color: rgb(124, 0, 0); 
+    text-align: center; 
+    font-weight: bold; 
+    margin-top: 20px; 
+}
+
+.status-pending{
+    color: rgb(219, 0, 0);
+    font-weight: semibold;
+}
+.status-paid{
+    font-weight: semibold;
+    color: rgb(0, 124, 8);
+}
+</style>

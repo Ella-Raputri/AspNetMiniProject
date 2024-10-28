@@ -4,10 +4,29 @@
   gap: 10px;
 }
 
+@media (max-width: 768px) {
+  .navbar[b-hi7ihj8f79] {
+      flex-direction: column;
+      align-items: flex-start;
+  }
 
-@media only screen and (max-width: 768px) {
   .navbar-links[b-hi7ihj8f79] {
-    display: block;
-    gap: 10px;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%; 
+  }
+
+  .navbar-links a[b-hi7ihj8f79] {
+      width: 100%; 
+      text-align: center; 
+      padding: 10px; 
+      border-radius: 5px; 
+  }
+
+  #userGreeting[b-hi7ihj8f79] {
+      margin-left: 10%;
+      margin-top: 10px;
+      width: 100%;
+      text-align: center;
   }
 }

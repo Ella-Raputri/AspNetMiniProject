@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+
+    <style>
+        #chevron {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 40px;
+            cursor: pointer;
+            color: #704297;
+            z-index: 3;
+        }
+
+        #chevron:hover {
+            color: #d3a8f9; 
+        }
+
+        #chevron-circle {
+            position: absolute;
+            top: 20px; 
+            left: 20px; 
+            width: 40px;
+            height: 40px;
+            background-color: #fff;
+            border-radius: 50%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            z-index: 1; 
+        }
+
+        #chevron-circle:hover {
+            background-color: lightgray; 
+        }
+    </style>
+
+</head>
+<body>
+    <div class="back-btn">
+        <a asp-area="" asp-controller="Home" asp-action="Index">
+            <div id="chevron-circle"></div>
+            <span class="material-symbols-outlined" id='chevron'>
+                chevron_left
+            </span>
+        </a>
+    </div>
+    <div class="container">
+        @RenderBody()
+    </div>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

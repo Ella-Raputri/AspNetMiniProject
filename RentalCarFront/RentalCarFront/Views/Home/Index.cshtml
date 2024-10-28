@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"]</title>
     <link rel="stylesheet" href="~/css/home.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">    
 </head>
 <body>
     <div class="title">
@@ -45,12 +46,39 @@
         </div>
     </div>
 
+    <div class="sort-controls">
+        <div class="sort-dropdown">
+            <label for="sortBy">Sort By:</label>
+            <select id="sortBy">
+                <option value="name">Name</option>
+                <option value="price">Price</option>
+            </select>
+        </div>
+        <button id="sortDirection" class="sort-button" onclick="toggleSortDirection()">
+            <span class="material-icons">arrow_drop_up</span>
+        </button>
+    </div>
+
     <div id="availableCars" class="car-list"></div>
     <div id="paginationControls" class="pagination-controls"></div>
 
     <script>
         let currentPage = 1;
         const itemsPerPage = 3;
+        let sortDirection = 'asc'; 
+        let sortBy = 'name';
+
+        document.getElementById('sortBy').addEventListener('change', (event) => {
+            sortBy = event.target.value;
+            fetchAvailableCars(); 
+        });
+
+        function toggleSortDirection() {
+            sortDirection = sortDirection === 'asc' ? 'desc' : 'asc';
+            const button = document.getElementById('sortDirection');
+            button.innerHTML = sortDirection === 'asc' ? '<span class="material-icons">arrow_drop_up</span>' : '<span class="material-icons">arrow_drop_down</span>'; 
+            fetchAvailableCars();
+        }
 
        async function fetchAvailableCars() {
             try {
@@ -80,41 +108,48 @@
         }
 
         function displayCars(cars) {
-            // Ensure that 'cars' is an array
             if (!Array.isArray(cars) || cars.length === 0) {
                 document.getElementById('availableCars').innerHTML = 'No available cars for the selected dates.';
                 return;
             }
 
+            cars.sort((a, b) => {
+                if (sortBy === 'price') {
+                    return sortDirection === 'asc' ? a.pricePerDay - b.pricePerDay : b.pricePerDay - a.pricePerDay;
+                } else { 
+                    return sortDirection === 'asc' ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name);
+                }
+            });
+
             const carsContainer = document.getElementById('availableCars');
             carsContainer.innerHTML = '';
             const carIds = cars.map(car => car.carId);
-            //console.log("hello");
-            //console.log(carIds);
 
-            // Determine the number of cars to display per page
             const carsPerPage = 3;
-            const totalPages = Math.ceil(cars.length / carsPerPage);
             let currentPage = 1;
 
             function renderPage(page) {
                 carsContainer.innerHTML = '';
 
-                // Calculate start and end index
                 const startIndex = (page - 1) * carsPerPage;
                 const endIndex = startIndex + carsPerPage;
 
-                // Slice the cars array to get the current page of cars
                 const carsToDisplay = cars.slice(startIndex, endIndex);
                 const userId = sessionStorage.getItem('CustomerId');
 
                 carsToDisplay.forEach(car => {
+                    const carId = car.carId;
+                    const carNumber = parseInt(carId.substring(3)); 
+                    const carImageIndex = (carNumber % 10) + 1; 
+                    const carImage = `/images/${carImageIndex}.jpeg`;
+                    const formattedPrice = car.pricePerDay.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
                     carsContainer.innerHTML += `
                         <div class="car-card">
-                            <img src="${car.carImageLink}" alt="${car.name}" class="car-image">
+                            <img src="${carImage}" alt="Placeholder for ${car.carImageLink}" class="car-image">
                             <h3>${car.name}</h3>
-                            <p>Price per day: ${car.pricePerDay}</p>
-                            <button class="details-button" 
+                            <p>Harga: Rp ${formattedPrice}/hari</p>
+                            <button id="details-button" 
                                     ${!userId ? 'disabled' : ''} 
                                     data-car-id="${car.carId}" 
                                     data-car-ids='${JSON.stringify(carIds)}' 
@@ -125,11 +160,27 @@
                     `;
                 });
 
-                // Render pagination controls if there is more than one page
                 const paginationControls = document.getElementById('paginationControls');
                 paginationControls.innerHTML = '';
 
-                for (let i = 1; i <= totalPages; i++) {
+                const totalPages = Math.ceil(cars.length / carsPerPage);
+                const maxPagesToShow = 5;
+                let startPage, endPage;
+
+                if (totalPages <= maxPagesToShow) {
+                    startPage = 1;
+                    endPage = totalPages;
+                } else {
+                    const midPoint = Math.floor(maxPagesToShow / 2);
+                    startPage = Math.max(1, page - midPoint);
+                    endPage = Math.min(totalPages, startPage + maxPagesToShow - 1);
+
+                    if (endPage - startPage < maxPagesToShow - 1) {
+                        startPage = Math.max(1, endPage - maxPagesToShow + 1);
+                    }
+                }
+
+                for (let i = startPage; i <= endPage; i++) {
                     const pageButton = document.createElement('button');
                     pageButton.textContent = i;
                     pageButton.classList.add('page-button');
@@ -139,22 +190,31 @@
                     pageButton.addEventListener('click', () => renderPage(i));
                     paginationControls.appendChild(pageButton);
                 }
+
+                if (endPage < totalPages) {
+                    const ellipsis = document.createElement('span');
+                    ellipsis.textContent = '...';
+                    paginationControls.appendChild(ellipsis);
+
+                    const lastPageButton = document.createElement('button');
+                    lastPageButton.textContent = totalPages;
+                    lastPageButton.classList.add('page-button');
+                    lastPageButton.addEventListener('click', () => renderPage(totalPages));
+                    paginationControls.appendChild(lastPageButton);
+                }
             }
 
-            // Render the first page initially
             renderPage(currentPage);
         }
 
         function goToDetails(button) {
             const carId = button.getAttribute('data-car-id');
-            const carIds = JSON.parse(button.getAttribute('data-car-ids')); // Parse the JSON string
-            //console.log("car");
-            //console.log(carIds);
+            const carIds = JSON.parse(button.getAttribute('data-car-ids')); 
 
             if (carId && carIds) {
-                sessionStorage.setItem('CarIds', JSON.stringify(carIds)); // Store as a string
+                sessionStorage.setItem('CarIds', JSON.stringify(carIds)); 
                 sessionStorage.setItem('SelectedCarId', carId);
-                window.location.href = `/Home/Detail`; // Adjust the path as needed for your app
+                window.location.href = `/Home/Detail`; 
             } else {
                 alert('Please log in to view details.');
             }
@@ -162,11 +222,11 @@
     </script>
 
 
-    <style>
-        /* Basic styling for the title */
+<style>
 .title {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 50px;
+    margin-bottom: 20px;
 }
 
 .title h1 {
@@ -174,11 +234,11 @@
     color: #333;
 }
 
-/* Styling for the filter section */
 .filter {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     margin: 20px;
+    margin-top: 40px;
 }
 
 .date1, .date2, .filter3 {
@@ -188,11 +248,11 @@
 }
 
 .button-wrapper {
-    align-self: center;
+    align-self: left;
 }
 
 .cari {
-    background-color: #4CAF50;
+    margin-top: 10px;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -202,17 +262,12 @@
     border-radius: 5px;
 }
 
-.cari:hover {
-    background-color: #45a049;
-}
-
-/* Styling for the car listing */
 .car-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     gap: 20px;
-    margin: 20px;
+    margin: 60px;
 }
 
 .car-card {
@@ -220,7 +275,7 @@
     border: 1px solid #ddd;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 300px; /* Adjust the width of each card */
+    width: 300px; 
     padding: 15px;
     text-align: center;
 }
@@ -233,26 +288,42 @@
 }
 
 .car-card h3 {
-    font-size: 18px;
+    font-size: 22px;
     color: #333;
     margin-bottom: 10px;
 }
 
 .car-card p {
-    margin: 5px 0;
+    font-size: 18px;
+    margin: 10px;
     color: #666;
+    margin-bottom: 20px;
 }
 
-/* Styling for pagination controls */
+.car-card #details-button{
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: rgb(244, 168, 26);
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+}
+
+.car-card #details-button:hover{
+    background-color: rgb(205, 139, 17);
+}
+
 .pagination-controls {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 60px;
     gap: 5px;
 }
 
 .page-button {
-    background-color: #4CAF50;
+    background-color: rgb(114, 196, 255);
     color: white;
     border: none;
     padding: 8px 16px;
@@ -262,13 +333,48 @@
 }
 
 .page-button.active {
-    background-color: #45a049;
+    background-color: rgb(48, 130, 188);
 }
 
 .page-button:hover {
-    background-color: #388e3c;
+    background-color: rgb(160, 215, 255);
 }
 
-    </style>
+.sort-controls {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 20px 40px;
+    gap: 2px;
+}
+
+.sort-dropdown {
+    display: flex;
+    align-items: center;
+}
+
+.sort-dropdown label{
+    margin-right: 5px;
+}
+.sort-dropdown select{
+    padding: 5px;
+}
+
+.sort-button {
+    font-size: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.sort-button:hover {
+    transform: scale(1.1);
+}
+
+#sortDirection span{
+    font-size: 32px;
+}
+</style>
 </body>
 </html>

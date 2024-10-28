@@ -158,7 +158,7 @@ namespace RentalCarBack.Controllers
 
             // Attempt to find the customer by name (or email if that’s the intended logic)
             var customer = await _context.MsCustomer
-                .FirstOrDefaultAsync(c => c.Name == request.Name); // Ensure you want to use Name for login
+                .FirstOrDefaultAsync(c => c.Email == request.Email); // Ensure you want to use Name for login
 
             // Check if the customer exists
             if (customer == null)
@@ -215,7 +215,7 @@ namespace RentalCarBack.Controllers
             
             // Set session values
             HttpContext.Session.SetString("CustomerId", customer.CustomerId);
-            HttpContext.Session.SetString("CustomerName", customer.Name);
+            HttpContext.Session.SetString("CustomerEmail", customer.Email);
 
             // Return success response with structured message
             return Ok(new ApiResponse<LoginResponse>
@@ -232,7 +232,6 @@ namespace RentalCarBack.Controllers
                         Email = customer.Email,
                         PhoneNumber = customer.PhoneNumber,
                         Address = customer.Address
-                        // Add any other user-related info you want to return
                     }
                 }
             });

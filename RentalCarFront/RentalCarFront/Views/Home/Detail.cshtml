@@ -4,50 +4,69 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Car Details</title>
-    <link rel="stylesheet" href="~/css/detail.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/detail.css" />
 </head>
 <body>
     <div class="car-details">
-        <h1 id="carName"></h1>
-        <img id="carImage" src="" alt="Car Image" />
+        <h1 class='title'>Sewa Mobil</h1>
 
-        <table>
-            <tbody>
-                <tr>
-                    <th>Model</th>
-                    <td id="carModel"></td>
-                </tr>
-                <tr>
-                    <th>Transmission</th>
-                    <td id="carTransmission"></td>
-                </tr>
-                <tr>
-                    <th>Seats</th>
-                    <td id="carSeats"></td>
-                </tr>
-                <tr>
-                    <th>Rental Date</th>
-                    <td id="rentalDate"></td>
-                </tr>
-                <tr>
-                    <th>Price per day</th>
-                    <td id="carPrice"></td>
-                </tr>
-                <tr>
-                    <th>Customer Name</th>
-                    <td id="customerName"></td>
-                </tr>
-                <tr>
-                    <th>Total Price</th>
-                    <td id="totalPrice"></td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="navigation">
+            <button id="prevCar" onclick="navigateCar(-1)" aria-label="Previous">
+                <span class="material-icons">chevron_left</span>
+            </button>
+            <img id="carImage" src="" alt="Car Image" />
+            <button id="nextCar" onclick="navigateCar(1)" aria-label="Next">
+                <span class="material-icons">chevron_right</span>
+            </button>
+        </div>
+
+        <div class="details"> 
+            <h2>Informasi Mobil</h2>
+            <div class="table-container"> <!-- Added div for responsiveness -->
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>Tipe Mobil</th>
+                            <td id="carModel" data-label="Model"></td>
+                        </tr>
+                        <tr>
+                            <th>Nama Mobil</th>
+                            <td id="carName" data-label="Car Name"></td>
+                        </tr>
+                        <tr>
+                            <th>Transmisi</th>
+                            <td id="carTransmission" data-label="Transmission"></td>
+                        </tr>
+                        <tr>
+                            <th>Jumlah Penumpang</th>
+                            <td id="carSeats" data-label="Seats"></td>
+                        </tr>
+                        <tr>
+                            <th>Nama Penyewa</th>
+                            <td id="customerName" data-label="Customer Name"></td>
+                        </tr>
+                        <tr>
+                            <th>Tanggal Sewa</th>
+                            <td id="rentalDate" data-label="Rental Date"></td>
+                        </tr>
+                        <tr>
+                            <th>Harga Sewa</th>
+                            <td id="carPrice" data-label="Price per day"></td>
+                        </tr>
+                        <tr>
+                            <th>Total Harga Sewa</th>
+                            <td id="totalPrice" data-label="Total Price"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
     </div>
 
     <button id="sewa" onclick="sewaCar()">Sewa Sekarang</button>
-    <button id="prevCar" onclick="navigateCar(-1)">Previous</button>
-    <button id="nextCar" onclick="navigateCar(1)">Next</button>
+    
     
 
     <script>
@@ -95,15 +114,21 @@
         function displayCarDetails(car, rangeTanggal) {
             const userEmail = sessionStorage.getItem('CustomerEmail');
 
+            const carId = car.carId;
+            const carNumber = parseInt(carId.substring(3)); 
+            const carImageIndex = (carNumber % 10) + 1; 
+            const carImage = `/images/${carImageIndex}.jpeg`;
+
             document.getElementById('carName').textContent = car.carName;
-            document.getElementById('carImage').src = car.carImageLink;
+            document.getElementById('carImage').src = carImage;
+            document.getElementById('carImage').alt = car.carImageLink;
             document.getElementById('carModel').textContent = car.model;
             document.getElementById('carTransmission').textContent = car.transmission;
             document.getElementById('carSeats').textContent = car.numberOfCarSeats;
             document.getElementById('rentalDate').textContent = rangeTanggal;
-            document.getElementById('carPrice').textContent = car.pricePerDay;
+            document.getElementById('carPrice').textContent = car.pricePerDay.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");;
             document.getElementById('customerName').textContent = `${car.customerName} (${userEmail})`;
-            document.getElementById('totalPrice').textContent = car.totalPrice;
+            document.getElementById('totalPrice').textContent = car.totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");;
         }
 
         function navigateCar(direction) {
@@ -191,40 +216,105 @@
     </script>
 
     <style>
+        .table-container {
+            overflow-x: auto; 
+            margin: 0 auto; 
+            width: 90%;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%; 
+            min-width: 600px; 
+        }
+
+        th, td {
+            border: 1px solid #aaa;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f0f0f0;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .details{
+            background-color: #fff;
+            width: 60%;
+            padding: 20px;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            padding-bottom: 50px;
+            border-radius: 2%;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        h2{
+            font-size: 20px;
+            color: black
+        }
         .car-details {
             text-align: center;
             margin: 20px;
         }
 
         .car-details img {
-            max-width: 100%;
-            height: auto;
+            max-width: 60%;
+            max-height: 40vh;
             margin-bottom: 20px;
+            border-radius: 5%;
         }
 
         .car-details h1 {
             font-size: 24px;
-            color: #333;
+            color: #4a4a4a;
         }
 
-        .car-details p {
-            margin: 5px 0;
-            color: #666;
+        .navigation {
+            display: flex;
+            align-items: center;
+            justify-content: center; 
+            margin: 20px 0;
         }
 
-        button {
-            margin: 5px;
-            padding: 10px 15px;
-            background-color: #4CAF50;
+        .navigation button {
+            background-color: rgba(0, 0, 0, 0.2);
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            font-size: 46px; 
+        }
+
+        .navigation button:hover {
+            background-color: rgba(0, 0, 0, 0.475);
+        }
+
+        #sewa {
+            display: block; 
+            margin: 20px auto; 
+            margin-top: 50px;
+            padding: 15px 20px;
+            background-color: rgb(244, 168, 26);
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            font-size: 20px;
         }
 
-        button:hover {
-            background-color: #45a049;
+        #sewa:hover{
+            background-color: rgb(205, 139, 17)
         }
     </style>
+
+
 </body>
 </html>

@@ -1,41 +1,149 @@
 ﻿@{
-    ViewData["Title"] = "Register Account";
+    Layout = "_LoginLayout";
+    ViewData["Title"] = "Register";
 }
-<h1>@ViewData["Title"]</h1>
 
 @model RentalCarFront.Models.Input.CreateUserRequest
 
-<form id="registerForm">
-    <div>
-        <label for="name">Nama Lengkap:</label>
-        <input type="text" id="fullName" name="name" required />
-    </div>
-    <div>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required />
-    </div>
-    <div>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required />
-    </div>
-    <div>
-        <label for="confirmPassword">Confirm Password:</label>
-        <input type="password" id="confirmPassword" name="confirmPassword" required />
-    </div>
-    <div>
-        <label for="phoneNumber">Nomor Telepon:</label>
-        <input type="text" id="phoneNumber" name="phoneNumber" required />
-    </div>
-    <div>
-        <label for="address">Alamat:</label>
-        <input type="text" id="address" name="address" required />
-    </div>
-    <button type="submit">Register</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
 
-    <p>Sudah punya akun? <a id='loginButton' asp-area="" asp-controller="User" asp-action="Login">Login</a></p>
-</form>
+    <style>
+        body {
+            display: flex;
+            font-family: Arial, sans-serif;
+            justify-content: center; 
+            align-items: center; 
+            height: 120vh; 
+            margin: 0; 
+            background-color: #f5eff9; 
+        }
 
-<div id="registerMessage"></div>
+        h1{
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            color: #4a4a4a;
+        }
+
+        #registerForm {
+            display: flex;
+            flex-direction: column; 
+            align-items: center; 
+            padding: 40px; 
+            background-color: #e4d1f5; 
+            border-radius: 5px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+            width: 400px;
+            max-width: 90%;
+            height: 90vh;
+            justify-content: space-between;
+        }
+
+        #registerForm div {
+            margin-bottom: 30px; 
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #registerForm label{
+            color: #4a4a4a;
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        #registerForm input{
+            border: none;
+            background-color: #fff;
+            padding: 10px;
+            font-size: 16px;
+            width: 100%;
+            outline: none;
+            border-radius: 5px;
+        }
+
+        #registerForm input:focus{
+            border: 1px solid black;
+        }
+
+        #registerForm p a{
+            font-size: 16px;
+            color: rgb(94, 25, 111);
+        }
+
+        #registerForm p a:hover{
+            color: rgb(174, 114, 189);
+        }
+
+        button {
+            width: 100%;
+            padding: 10px 15px; 
+            background-color: #fc7575; 
+            color: white; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            font-size: 16px;
+            display: block; 
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #f79292; 
+        }
+
+        #registerMessage {
+            margin-top: 14px; 
+            text-align: center; 
+        }
+    </style>
+</head>
+<body>
+    <h1>@ViewData["Title"] ke RentCar</h1>
+    <form id="registerForm">
+        <div>
+            <label for="name">Nama Lengkap:</label>
+            <input type="text" id="fullName" name="name" placeholder="Masukkan nama lengkap Anda"  required />
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Masukkan email Anda"  required />
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password"placeholder="Masukkan password Anda"  required />
+        </div>
+        <div>
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword"placeholder="Masukkan kembali password Anda"  required />
+        </div>
+        <div>
+            <label for="phoneNumber">Nomor Telepon:</label>
+            <input type="text" id="phoneNumber" name="phoneNumber"placeholder="Masukkan nomor telepon Anda"  required />
+        </div>
+        <div>
+            <label for="address">Alamat:</label>
+            <input type="text" id="address" name="address"placeholder="Masukkan alamat Anda"  required />
+        </div>
+        <button type="submit">Register</button>
+
+        <p>Sudah punya akun? <a id='loginButton' asp-area="" asp-controller="User" asp-action="Login">Login di sini</a></p>
+    </form>
+
+    <div id="registerMessage"></div>
+    
+</body>
+</html>
+
+
+
 
 @section Scripts {
     <script>

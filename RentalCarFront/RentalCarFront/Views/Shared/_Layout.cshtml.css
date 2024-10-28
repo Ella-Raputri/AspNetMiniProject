@@ -3,10 +3,29 @@
   gap: 10px;
 }
 
+@media (max-width: 768px) {
+  .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+  }
 
-@media only screen and (max-width: 768px) {
   .navbar-links {
-    display: block;
-    gap: 10px;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%; 
+  }
+
+  .navbar-links a {
+      width: 100%; 
+      text-align: center; 
+      padding: 10px; 
+      border-radius: 5px; 
+  }
+
+  #userGreeting {
+      margin-left: 10%;
+      margin-top: 10px;
+      width: 100%;
+      text-align: center;
   }
 }

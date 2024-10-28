@@ -1,33 +1,26 @@
+@media (max-width: 768px) {
+  table {
+      display: block; 
+      width: 100%; 
+  }
 
-.car-details {
-    text-align: center;
-    margin: 20px;
-}
+  thead {
+      display: none; 
+  }
 
-.car-details img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 20px;
-}
+  tr {
+      display: flex;
+      flex-direction: column; 
+      border: none; 
+      margin-bottom: 15px; 
+  }
 
-table {
-    margin: 0 auto;
-    border-collapse: collapse;
-    width: 80%;
-}
-
-th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-}
-
-th {
-    background-color: #4CAF50;
-    color: white;
-}
-
-h1 {
-    font-size: 24px;
-    color: #333;
+  td {
+      display: flex; 
+      justify-content: space-between; 
+      padding: 10px;
+      border: 1px solid #aaa; 
+      border-radius: 4px; 
+      background-color: #ffffff; 
+  }
 }
