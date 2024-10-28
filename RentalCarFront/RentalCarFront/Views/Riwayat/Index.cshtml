@@ -19,12 +19,25 @@
     </table>    
 </div>
 
+<div id="paymentModal" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); background-color:white; padding:20px; border-radius:8px; box-shadow:0px 0px 10px rgba(0,0,0,0.5);">
+    <h2>Select Payment Method</h2>
+    <select id="paymentMethod">
+        <option value="Cash">Cash</option>
+        <option value="Credit">Credit</option>
+        <option value="Debit">Debit</option>
+    </select>
+    <button onclick="confirmPayment()">Confirm</button>
+    <button onclick="closeModal()">Cancel</button>
+</div>
+
+
 <div id="noDataMessage" style="display:none;">Data not found. Please log in to view your rental history.</div>
 
 
 @section Scripts {
     <script>
         const userId = sessionStorage.getItem('CustomerId'); 
+        let selectedRentalId = null;
 
         async function fetchRentalHistory() {
             try {
@@ -42,7 +55,7 @@
 
                     result.forEach(item => {
                         rentalHistoryContainer.innerHTML += `
-                            <tr class="rental-item">
+                            <tr class="rental-item" data-rental-id="${item.rentalId}">
                                 <td>${item.rentalDate}</td>
                                 <td>${item.carName}</td>
                                 <td>Rp ${item.pricePerDay.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</td>
@@ -61,6 +74,68 @@
                 document.getElementById('noDataMessage').style.display = 'block';
             }
         }
+
+        document.getElementById('rentalHistoryTable').addEventListener('click', function(event) {
+            const row = event.target.closest('.rental-item');
+            if (row) {
+                const statusCell = row.querySelector('.status-pending');
+
+                if (statusCell) { 
+                    selectedRentalId = row.getAttribute('data-rental-id'); // Save rental ID
+                    console.log('Rental ID:', selectedRentalId);
+                    openModal(); // Show modal for payment selection
+                }
+            }
+        });
+
+        // Open the payment method modal
+        function openModal() {
+            document.getElementById('paymentModal').style.display = 'block';
+        }
+
+        // Close the payment method modal
+        function closeModal() {
+            document.getElementById('paymentModal').style.display = 'none';
+            selectedRentalId = null; // Clear selected rental ID if modal is closed without confirming
+        }
+
+        // Confirm payment and post payment data to backend
+        async function confirmPayment() {
+            const paymentMethod = document.getElementById('paymentMethod').value;
+            const paymentDate = new Date().toISOString(); // Current date as payment date
+            const amount = 1000; // Replace with actual amount or calculate as needed
+
+            // Construct payment request payload
+            const paymentData = {
+                PaymentDate: paymentDate,
+                Amount: amount,
+                PaymentMethod: paymentMethod,
+                RentalId: selectedRentalId
+            };
+
+            try {
+                const response = await fetch('http://localhost:7100/api/Rental/Payment', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(paymentData),
+                    credentials: 'include' 
+                });
+
+                const result = await response.json();
+                if (response.ok) {
+                    console.log('Payment successful:', result);
+                    closeModal();
+                    // Optional: Refresh rental history to update status
+                    fetchRentalHistory();
+                } else {
+                    console.error('Payment failed:', result.Data);
+                }
+            } catch (error) {
+                console.error('Error processing payment:', error);
+            }
+        }
+
+
 
         document.addEventListener('DOMContentLoaded', fetchRentalHistory);
     </script>

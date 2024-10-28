@@ -5,6 +5,7 @@ namespace RentalCarFront.Models.Output;
 public class GetRiwayatUser
 {
     public string RentalDate { get; set; }
+    public string RentalId { get; set; }
     public string CarName { get; set; }
     public decimal PricePerDay { get; set; } 
     public int TotalDays { get; set; }

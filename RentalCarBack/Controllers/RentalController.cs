@@ -417,12 +417,13 @@ namespace RentalCarBack.Controllers
                 )
                 .Select(data => new GetRentalHistory
                 {
+                    RentalId = data.rental.RentalId,
                     RentalDate = $"{data.rental.RentalDate:dd MMMM yyyy} - {data.rental.ReturnDate:dd MMMM yyyy}",
                     CarName = data.car.Name,
                     PricePerDay = data.car.PricePerDay,
                     TotalDays = (data.rental.ReturnDate - data.rental.RentalDate).Days,
                     TotalPrice = data.car.PricePerDay * (data.rental.ReturnDate - data.rental.RentalDate).Days,
-                    Status = data.PaymentDate.HasValue // True if there is a payment, false otherwise
+                    Status = data.PaymentDate.HasValue 
                 })
                 .Distinct()
                 .ToListAsync();
@@ -437,6 +438,75 @@ namespace RentalCarBack.Controllers
 
             return Ok(rentalHistory);
         }
+
+
+        // Insert payment history
+        [HttpPost("Payment")]
+        public async Task<IActionResult> PostPayment([FromBody] CreatePaymentRequest request) {
+            try {
+                if (!ModelState.IsValid) {
+                    return BadRequest(new ApiResponse<string> {
+                        StatusCode = StatusCodes.Status400BadRequest,
+                        RequestMethod = HttpContext.Request.Method,
+                        Data = "Invalid input data."
+                    });
+                }
+
+                // Get last payment ID
+                var lastPaymentID = await _context.TrPayment
+                    .OrderByDescending(x => x.PaymentId)
+                    .Select(x => x.PaymentId)
+                    .FirstOrDefaultAsync();
+
+                int num = 0;
+
+                // Check if lastPaymentID exists and is valid
+                if (!string.IsNullOrEmpty(lastPaymentID) && lastPaymentID.StartsWith("PY")) {
+                    var currPaymentID = lastPaymentID.Substring(2); // Remove "PY" prefix
+                    if (int.TryParse(currPaymentID, out num)) {
+                        num += 1;
+                    } else {
+                        return BadRequest(new ApiResponse<string> {
+                            StatusCode = StatusCodes.Status400BadRequest,
+                            RequestMethod = HttpContext.Request.Method,
+                            Data = "Invalid last payment ID format."
+                        });
+                    }
+                } else {
+                    num = 1; // Start from 1 if no previous ID is found or format is invalid
+                }
+
+                var newPaymentID = num.ToString("D3");
+
+                var newPaymentData = new TrPayment {
+                    PaymentId = $"PY{newPaymentID}",
+                    PaymentDate = request.PaymentDate,
+                    Amount = request.Amount,
+                    PaymentMethod = request.PaymentMethod,
+                    RentalId = request.RentalId
+                };
+
+                _context.TrPayment.Add(newPaymentData);
+                await _context.SaveChangesAsync();
+
+                var response = new ApiResponse<string> {
+                    StatusCode = StatusCodes.Status201Created,
+                    RequestMethod = HttpContext.Request.Method,
+                    Data = "Payment is successful."
+                };
+
+                return StatusCode(StatusCodes.Status201Created, response);
+
+            } catch (Exception e) {
+                var response = new ApiResponse<string> {
+                    StatusCode = StatusCodes.Status400BadRequest,
+                    RequestMethod = HttpContext.Request.Method,
+                    Data = e.Message
+                };
+                return BadRequest(response);
+            }
+        }
+
 
 
     }
