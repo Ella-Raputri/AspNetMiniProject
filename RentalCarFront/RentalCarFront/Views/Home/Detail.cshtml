@@ -1,0 +1,230 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Car Details</title>
+    <link rel="stylesheet" href="~/css/detail.css" />
+</head>
+<body>
+    <div class="car-details">
+        <h1 id="carName"></h1>
+        <img id="carImage" src="" alt="Car Image" />
+
+        <table>
+            <tbody>
+                <tr>
+                    <th>Model</th>
+                    <td id="carModel"></td>
+                </tr>
+                <tr>
+                    <th>Transmission</th>
+                    <td id="carTransmission"></td>
+                </tr>
+                <tr>
+                    <th>Seats</th>
+                    <td id="carSeats"></td>
+                </tr>
+                <tr>
+                    <th>Rental Date</th>
+                    <td id="rentalDate"></td>
+                </tr>
+                <tr>
+                    <th>Price per day</th>
+                    <td id="carPrice"></td>
+                </tr>
+                <tr>
+                    <th>Customer Name</th>
+                    <td id="customerName"></td>
+                </tr>
+                <tr>
+                    <th>Total Price</th>
+                    <td id="totalPrice"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button id="sewa" onclick="sewaCar()">Sewa Sekarang</button>
+    <button id="prevCar" onclick="navigateCar(-1)">Previous</button>
+    <button id="nextCar" onclick="navigateCar(1)">Next</button>
+    
+
+    <script>
+        function formatDateRange(pickUpDate, returnDate) {
+            const options = { day: '2-digit', month: 'long', year: 'numeric' };
+            
+            const pickUpDateObj = new Date(pickUpDate);
+            const returnDateObj = new Date(returnDate);
+
+            // Format the dates using Intl.DateTimeFormat
+            const formattedPickUpDate = new Intl.DateTimeFormat('id-ID', options).format(pickUpDateObj);
+            const formattedReturnDate = new Intl.DateTimeFormat('id-ID', options).format(returnDateObj);
+
+            return `${formattedPickUpDate} sampai ${formattedReturnDate}`;
+        }
+        
+        async function fetchCarDetails() {
+            const carId = sessionStorage.getItem('SelectedCarId');
+            const customerName = sessionStorage.getItem('CustomerName');
+            const dateStart = sessionStorage.getItem('DateStart');
+            const dateEnd = sessionStorage.getItem('DateEnd');
+            const rangeTanggal = formatDateRange(dateStart, dateEnd);
+
+            try {
+                const response = await fetch(`http://localhost:7100/api/Rental/info?customerName=${customerName}&id=${carId}&dateStart=${dateStart}&dateEnd=${dateEnd}`, {
+                    method: 'GET',
+                    credentials: 'include'
+                });
+
+                const text = await response.text(); // Get raw response as text
+                // console.log('Raw response:', text); // Log the response
+
+                const result = JSON.parse(text); // Parse the text
+                if (response.ok) {
+                    displayCarDetails(result.data, rangeTanggal);
+                } else {
+                    console.error('Error fetching car details:', result);
+                    document.querySelector('.car-details').innerHTML = 'Car details not found.';
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+
+        function displayCarDetails(car, rangeTanggal) {
+            const userEmail = sessionStorage.getItem('CustomerEmail');
+
+            document.getElementById('carName').textContent = car.carName;
+            document.getElementById('carImage').src = car.carImageLink;
+            document.getElementById('carModel').textContent = car.model;
+            document.getElementById('carTransmission').textContent = car.transmission;
+            document.getElementById('carSeats').textContent = car.numberOfCarSeats;
+            document.getElementById('rentalDate').textContent = rangeTanggal;
+            document.getElementById('carPrice').textContent = car.pricePerDay;
+            document.getElementById('customerName').textContent = `${car.customerName} (${userEmail})`;
+            document.getElementById('totalPrice').textContent = car.totalPrice;
+        }
+
+        function navigateCar(direction) {
+            const carIdsString = sessionStorage.getItem('CarIds');
+            console.log(carIdsString);
+
+            // Check if carIdsString exists and is not empty
+            if (!carIdsString) {
+                alert('No cars available to navigate.');
+                return;
+            }
+
+            let carIds;
+            try {
+                carIds = JSON.parse(carIdsString);
+            } catch (e) {
+                console.error('Error parsing CarIds:', e);
+                alert('Error navigating cars. Please try again.');
+                return;
+            }
+
+            const currentCarId = sessionStorage.getItem('SelectedCarId');
+            console.log("curr= ", currentCarId);
+            const currentIndex = carIds.indexOf(currentCarId);
+
+            if (currentIndex === -1) {
+                alert('Current car not found in the list.');
+                return;
+            }
+
+            const newIndex = currentIndex + direction;
+            if (newIndex < 0 || newIndex >= carIds.length) {
+                alert('No more cars in this direction.');
+                return;
+            }
+
+            sessionStorage.setItem('SelectedCarId', carIds[newIndex]);
+            fetchCarDetails(); // Re-fetch details for the new car
+        }
+
+        async function sewaCar() {
+            const carId = sessionStorage.getItem('SelectedCarId');
+            const customerId = sessionStorage.getItem('CustomerId'); 
+            const rentalDate = sessionStorage.getItem('DateStart');
+            const returnDate = sessionStorage.getItem('DateEnd');
+            const totalPrice = parseFloat(document.getElementById('totalPrice').textContent.replace(/[^\d.-]/g, ''));
+
+            const requestBody = {
+                RentalDate: rentalDate,
+                ReturnDate: returnDate,
+                TotalPrice: totalPrice,
+                PaymentStatus: false, // Set this based on your logic, true or false
+                CustomerId: customerId,
+                CarId: carId
+            };
+
+            try {
+                const response = await fetch('http://localhost:7100/api/Rental/Booking', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    credentials: 'include',
+                    body: JSON.stringify(requestBody)
+                });
+
+                const result = await response.json();
+                if (response.ok) {
+                    alert(result.data); // Display success message
+                    window.location.href = '/Riwayat/Index'; // Redirect to the history page
+                } else {
+                    console.error('Error during booking:', result);
+                    alert('Booking failed: ' + result.data);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred while booking the car.');
+            }
+        }
+
+
+
+        // Fetch the car details when the page loads
+        window.onload = fetchCarDetails;
+    </script>
+
+    <style>
+        .car-details {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .car-details img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .car-details h1 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        .car-details p {
+            margin: 5px 0;
+            color: #666;
+        }
+
+        button {
+            margin: 5px;
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</body>
+</html>

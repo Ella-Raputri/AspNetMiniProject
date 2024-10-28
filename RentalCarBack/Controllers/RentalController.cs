@@ -284,22 +284,19 @@ namespace RentalCarBack.Controllers
 
         // Get information tentang penyewa dan mobil saat klik sewa sekarang
         [HttpGet("info")]
-        public async Task<ActionResult<ApiResponse<IEnumerable<GetCarInformation>>>> GetCarInformation(DateTime dateStart, DateTime dateEnd)
+        public async Task<ActionResult<ApiResponse<GetCarInformation>>> GetCarInfo(string customerName, 
+            string id, DateTime dateStart, DateTime dateEnd)
         {
-            var customerName = HttpContext.Session.GetString("CustomerName");
-            var customerId = HttpContext.Session.GetString("CustomerId");
+            // var customerName = HttpContext.Session.GetString("CustomerName");
+            // var customerId = HttpContext.Session.GetString("CustomerId");
 
-            if (string.IsNullOrEmpty(customerId) || string.IsNullOrEmpty(customerName))
+            if (string.IsNullOrEmpty(customerName))
             {
                 return NotFound("Customer not found.");
             }
 
-            var availableCarsQuery = _context.MsCar
-                .Where(car => car.CarImage != null && !_context.TrRental
-                    .Any(rental =>
-                        rental.CarId == car.CarId &&
-                        rental.RentalDate < dateEnd &&
-                        (rental.ReturnDate == null || rental.ReturnDate > dateStart)))
+            var carInformation = await _context.MsCar
+                .Where(car => car.CarId == id && car.CarImage != null)
                 .Select(car => new GetCarInformation
                 {
                     CarId = car.CarId,
@@ -313,24 +310,20 @@ namespace RentalCarBack.Controllers
                     dateStart = dateStart,
                     dateEnd = dateEnd,
                     totalPrice = car.PricePerDay * (dateEnd - dateStart).Days
-                });
+                })
+                .FirstOrDefaultAsync();
 
-            // Pagination
-            // var totalCars = await availableCarsQuery.CountAsync();
-            var availableCars = await availableCarsQuery.ToListAsync();
-                // .Skip((page - 1) * pageSize)
-                // .Take(pageSize)
-                // .ToListAsync();
-
-            if (!availableCars.Any()){
-                return NoContent();
+            if (carInformation == null)
+            {
+                return NotFound("Car not found.");
             }
 
-            return Ok(new ApiResponse<IEnumerable<GetCarInformation>>
+            return Ok(new ApiResponse<GetCarInformation>
             {
-                Data = availableCars,
+                Data = carInformation,
             });
         }
+
 
         // Insert rental/booking history
         [HttpPost("Booking")]
@@ -396,51 +389,54 @@ namespace RentalCarBack.Controllers
                 return BadRequest("User ID is required.");
             }
 
-            var paymentData = await _context.TrPayment
-                .Join(_context.TrRental,
-                    payment => payment.RentalId,
+            var rentalHistory = await _context.TrRental
+                .Where(rental => rental.CustomerId == userId)
+                .GroupJoin(
+                    _context.TrPayment,
                     rental => rental.RentalId,
-                    (payment, rental) => new { payment, rental })
-                .Join(_context.MsCar,
+                    payment => payment.RentalId,
+                    (rental, payments) => new { rental, payments }
+                )
+                .SelectMany(
+                    x => x.payments.DefaultIfEmpty(), // This ensures a left join
+                    (x, payment) => new
+                    {
+                        x.rental,
+                        PaymentDate = payment.PaymentDate // This will be null if no payment exists
+                    }
+                )
+                .Join(
+                    _context.MsCar,
                     combined => combined.rental.CarId,
                     car => car.CarId,
                     (combined, car) => new 
                     {
-                        combined.payment,
                         combined.rental,
-                        car
-                    })
-                .Where(data => data.rental.CustomerId == userId)
-                .GroupBy(data => new
+                        car,
+                        combined.PaymentDate
+                    }
+                )
+                .Select(data => new GetRentalHistory
                 {
-                    data.rental.RentalId,
-                    data.car.Name,
-                    data.car.PricePerDay,
-                    data.rental.RentalDate,
-                    data.rental.ReturnDate,
-                    data.payment.PaymentDate
-                })
-                .Select(g => new GetRentalHistory
-                {
-                    RentalDate = $"{g.First().rental.RentalDate:dd MMMM yyyy} - {g.First().rental.ReturnDate:dd MMMM yyyy}",
-                    CarName = g.First().car.Name,
-                    PricePerDay = g.First().car.PricePerDay,
-                    TotalDays = (g.First().rental.ReturnDate - g.First().rental.RentalDate).Days,
-                    TotalPrice = g.First().car.PricePerDay * (g.First().rental.ReturnDate - g.First().rental.RentalDate).Days,
-                    Status = g.First().payment.PaymentDate.HasValue
+                    RentalDate = $"{data.rental.RentalDate:dd MMMM yyyy} - {data.rental.ReturnDate:dd MMMM yyyy}",
+                    CarName = data.car.Name,
+                    PricePerDay = data.car.PricePerDay,
+                    TotalDays = (data.rental.ReturnDate - data.rental.RentalDate).Days,
+                    TotalPrice = data.car.PricePerDay * (data.rental.ReturnDate - data.rental.RentalDate).Days,
+                    Status = data.PaymentDate.HasValue // True if there is a payment, false otherwise
                 })
                 .Distinct()
                 .ToListAsync();
 
-            if (!paymentData.Any())
+            if (!rentalHistory.Any())
             {
                 return NoContent();
             }
 
-            var jsonResponse = JsonConvert.SerializeObject(paymentData);
+            var jsonResponse = JsonConvert.SerializeObject(rentalHistory);
             Console.WriteLine(jsonResponse);
 
-            return Ok(paymentData);
+            return Ok(rentalHistory);
         }
 
 

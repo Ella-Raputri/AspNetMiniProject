@@ -6,10 +6,6 @@ namespace RentalCarBack.Model.Request;
 public class CreateRentalHistoryRequest
 {
     [Required]
-    [StringLength(36)]
-    public string RentalId { get; set; }
-
-    [Required]
     public DateTime RentalDate { get; set; } 
 
     [Required]

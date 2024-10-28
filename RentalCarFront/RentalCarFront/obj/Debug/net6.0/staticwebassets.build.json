@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "hToPONKFQsvF3q9GGrADI+S4oK+JA1UfxuX4F9K4F6M=",
+  "Hash": "TNX4qsaGEzN+xEAZ8ytAt/W13NF64gPWSvLfcct550c=",
   "Source": "RentalCarFront",
   "BasePath": "_content/RentalCarFront",
   "Mode": "Default",
@@ -53,6 +53,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\RentalCarFront.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\css\\detail.css",
+      "SourceId": "RentalCarFront",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "BasePath": "_content/RentalCarFront",
+      "RelativePath": "css/detail.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\detail.css"
     },
     {
       "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\css\\home.css",
