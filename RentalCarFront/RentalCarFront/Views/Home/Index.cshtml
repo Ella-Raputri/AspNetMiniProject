@@ -48,10 +48,10 @@
 
     <div class="sort-controls">
         <div class="sort-dropdown">
-            <label for="sortBy">Sort By:</label>
+            <label for="sortBy">Sortir berdasarkan:</label>
             <select id="sortBy">
-                <option value="name">Name</option>
-                <option value="price">Price</option>
+                <option value="name">Nama</option>
+                <option value="price">Harga</option>
             </select>
         </div>
         <button id="sortDirection" class="sort-button" onclick="toggleSortDirection()">
@@ -100,7 +100,7 @@
                     displayCars(result.data);
                 } else {
                     console.error('No data found:', result);
-                    document.getElementById('availableCars').innerHTML = 'No available cars for the selected dates.';
+                    document.getElementById('availableCars').innerHTML = 'Tidak ada mobil yang tersedia pada tanggal ini.';
                 }
             } catch (error) {
                 console.error('Error fetching available cars:', error);
@@ -109,7 +109,7 @@
 
         function displayCars(cars) {
             if (!Array.isArray(cars) || cars.length === 0) {
-                document.getElementById('availableCars').innerHTML = 'No available cars for the selected dates.';
+                document.getElementById('availableCars').innerHTML = 'Tidak ada mobil yang tersedia pada tanggal ini.';
                 return;
             }
 
@@ -208,6 +208,7 @@
         }
 
         function goToDetails(button) {
+            console.log("masuk");
             const carId = button.getAttribute('data-car-id');
             const carIds = JSON.parse(button.getAttribute('data-car-ids')); 
 
@@ -216,7 +217,7 @@
                 sessionStorage.setItem('SelectedCarId', carId);
                 window.location.href = `/Home/Detail`; 
             } else {
-                alert('Please log in to view details.');
+                alert('Silakan login untuk melihat detail.');
             }
         }
     </script>

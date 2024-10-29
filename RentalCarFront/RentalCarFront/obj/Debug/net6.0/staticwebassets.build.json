@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "jZ01R5XnCZxnCyPeoorKK2HCd9PJb4j22Gpai47fkKU=",
+  "Hash": "6+MMzMljG5AbeoSwNsGzyJpqGrnZTxs4KwW0djwiYN8=",
   "Source": "RentalCarFront",
   "BasePath": "_content/RentalCarFront",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "RentalCarFront\\wwwroot",
       "Source": "RentalCarFront",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\obj\\Debug\\net6.0\\scopedcss\\bundle\\RentalCarFront.styles.css",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\obj\\Debug\\net6.0\\scopedcss\\bundle\\RentalCarFront.styles.css",
       "SourceId": "RentalCarFront",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "RentalCarFront.styles.css",
       "AssetKind": "All",
@@ -33,13 +33,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\obj\\Debug\\net6.0\\scopedcss\\bundle\\RentalCarFront.styles.css"
+      "OriginalItemSpec": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\obj\\Debug\\net6.0\\scopedcss\\bundle\\RentalCarFront.styles.css"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\RentalCarFront.bundle.scp.css",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\RentalCarFront.bundle.scp.css",
       "SourceId": "RentalCarFront",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "RentalCarFront.bundle.scp.css",
       "AssetKind": "All",
@@ -52,13 +52,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\RentalCarFront.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\RentalCarFront.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\css\\detail.css",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\css\\detail.css",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "css/detail.css",
       "AssetKind": "All",
@@ -74,10 +74,10 @@
       "OriginalItemSpec": "wwwroot\\css\\detail.css"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\css\\home.css",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\css\\home.css",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "css/home.css",
       "AssetKind": "All",
@@ -93,10 +93,10 @@
       "OriginalItemSpec": "wwwroot\\css\\home.css"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\css\\site.css",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\css\\site.css",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -112,10 +112,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\favicon.ico",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\favicon.ico",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -131,10 +131,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\images\\1.jpeg",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\images\\1.jpeg",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "images/1.jpeg",
       "AssetKind": "All",
@@ -150,10 +150,10 @@
       "OriginalItemSpec": "wwwroot\\images\\1.jpeg"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\images\\10.jpeg",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\images\\10.jpeg",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "images/10.jpeg",
       "AssetKind": "All",
@@ -169,10 +169,10 @@
       "OriginalItemSpec": "wwwroot\\images\\10.jpeg"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\images\\2.jpeg",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\images\\2.jpeg",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "images/2.jpeg",
       "AssetKind": "All",
@@ -188,10 +188,10 @@
       "OriginalItemSpec": "wwwroot\\images\\2.jpeg"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\images\\3.jpeg",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\images\\3.jpeg",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "images/3.jpeg",
       "AssetKind": "All",
@@ -207,10 +207,10 @@
       "OriginalItemSpec": "wwwroot\\images\\3.jpeg"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\images\\4.jpeg",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\images\\4.jpeg",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "images/4.jpeg",
       "AssetKind": "All",
@@ -226,10 +226,10 @@
       "OriginalItemSpec": "wwwroot\\images\\4.jpeg"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\images\\5.jpeg",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\images\\5.jpeg",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "images/5.jpeg",
       "AssetKind": "All",
@@ -245,10 +245,10 @@
       "OriginalItemSpec": "wwwroot\\images\\5.jpeg"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\images\\6.jpeg",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\images\\6.jpeg",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "images/6.jpeg",
       "AssetKind": "All",
@@ -264,10 +264,10 @@
       "OriginalItemSpec": "wwwroot\\images\\6.jpeg"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\images\\7.jpeg",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\images\\7.jpeg",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "images/7.jpeg",
       "AssetKind": "All",
@@ -283,10 +283,10 @@
       "OriginalItemSpec": "wwwroot\\images\\7.jpeg"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\images\\8.jpeg",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\images\\8.jpeg",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "images/8.jpeg",
       "AssetKind": "All",
@@ -302,10 +302,10 @@
       "OriginalItemSpec": "wwwroot\\images\\8.jpeg"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\images\\9.jpeg",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\images\\9.jpeg",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "images/9.jpeg",
       "AssetKind": "All",
@@ -321,10 +321,10 @@
       "OriginalItemSpec": "wwwroot\\images\\9.jpeg"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\js\\site.js",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\js\\site.js",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "js/site.js",
       "AssetKind": "All",
@@ -340,10 +340,10 @@
       "OriginalItemSpec": "wwwroot\\js\\site.js"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css",
       "AssetKind": "All",
@@ -359,10 +359,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css.map",
       "AssetKind": "All",
@@ -378,10 +378,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css",
       "AssetKind": "All",
@@ -397,10 +397,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
       "AssetKind": "All",
@@ -416,10 +416,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
       "AssetKind": "All",
@@ -435,10 +435,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
       "AssetKind": "All",
@@ -454,10 +454,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
       "AssetKind": "All",
@@ -473,10 +473,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
       "AssetKind": "All",
@@ -492,10 +492,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css",
       "AssetKind": "All",
@@ -511,10 +511,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css.map",
       "AssetKind": "All",
@@ -530,10 +530,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css",
       "AssetKind": "All",
@@ -549,10 +549,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
       "AssetKind": "All",
@@ -568,10 +568,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
       "AssetKind": "All",
@@ -587,10 +587,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
       "AssetKind": "All",
@@ -606,10 +606,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
       "AssetKind": "All",
@@ -625,10 +625,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
       "AssetKind": "All",
@@ -644,10 +644,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css",
       "AssetKind": "All",
@@ -663,10 +663,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css.map",
       "AssetKind": "All",
@@ -682,10 +682,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css",
       "AssetKind": "All",
@@ -701,10 +701,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
       "AssetKind": "All",
@@ -720,10 +720,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
       "AssetKind": "All",
@@ -739,10 +739,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
       "AssetKind": "All",
@@ -758,10 +758,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
       "AssetKind": "All",
@@ -777,10 +777,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
       "AssetKind": "All",
@@ -796,10 +796,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css",
       "AssetKind": "All",
@@ -815,10 +815,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css.map",
       "AssetKind": "All",
@@ -834,10 +834,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css",
       "AssetKind": "All",
@@ -853,10 +853,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -872,10 +872,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css",
       "AssetKind": "All",
@@ -891,10 +891,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css.map",
       "AssetKind": "All",
@@ -910,10 +910,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css",
       "AssetKind": "All",
@@ -929,10 +929,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
       "AssetKind": "All",
@@ -948,10 +948,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js",
       "AssetKind": "All",
@@ -967,10 +967,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js.map",
       "AssetKind": "All",
@@ -986,10 +986,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js",
       "AssetKind": "All",
@@ -1005,10 +1005,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
       "AssetKind": "All",
@@ -1024,10 +1024,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js",
       "AssetKind": "All",
@@ -1043,10 +1043,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js.map",
       "AssetKind": "All",
@@ -1062,10 +1062,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js",
       "AssetKind": "All",
@@ -1081,10 +1081,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
       "AssetKind": "All",
@@ -1100,10 +1100,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js",
       "AssetKind": "All",
@@ -1119,10 +1119,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js.map",
       "AssetKind": "All",
@@ -1138,10 +1138,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js",
       "AssetKind": "All",
@@ -1157,10 +1157,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js.map",
       "AssetKind": "All",
@@ -1176,10 +1176,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\bootstrap\\LICENSE",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "lib/bootstrap/LICENSE",
       "AssetKind": "All",
@@ -1195,10 +1195,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\LICENSE"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
@@ -1214,10 +1214,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "AssetKind": "All",
@@ -1233,10 +1233,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
       "AssetKind": "All",
@@ -1252,10 +1252,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
       "AssetKind": "All",
@@ -1271,10 +1271,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
       "AssetKind": "All",
@@ -1290,10 +1290,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
       "AssetKind": "All",
@@ -1309,10 +1309,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
       "AssetKind": "All",
@@ -1328,10 +1328,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "lib/jquery-validation/LICENSE.md",
       "AssetKind": "All",
@@ -1347,10 +1347,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "lib/jquery/dist/jquery.js",
       "AssetKind": "All",
@@ -1366,10 +1366,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "lib/jquery/dist/jquery.min.js",
       "AssetKind": "All",
@@ -1385,10 +1385,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "lib/jquery/dist/jquery.min.map",
       "AssetKind": "All",
@@ -1404,10 +1404,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Identity": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "SourceId": "RentalCarFront",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\wwwroot\\",
       "BasePath": "_content/RentalCarFront",
       "RelativePath": "lib/jquery/LICENSE.txt",
       "AssetKind": "All",

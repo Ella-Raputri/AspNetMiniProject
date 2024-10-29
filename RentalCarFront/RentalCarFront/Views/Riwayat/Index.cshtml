@@ -31,7 +31,7 @@
 </div>
 
 
-<div id="noDataMessage" style="display:none;">Data not found. Please log in to view your rental history.</div>
+<div id="noDataMessage" style="display:none;">Data tidak ditemukan. Silakan login untuk melihat riwayat sewa Anda.</div>
 
 
 @section Scripts {
@@ -183,11 +183,6 @@ tr:nth-child(even) {
     background-color: #f1f1f1; 
 }
 
-tr:hover {
-    background-color: #fffde8; 
-    transition: background-color 0.3s; 
-}
-
 #noDataMessage {
     color: rgb(124, 0, 0); 
     text-align: center; 
@@ -198,6 +193,9 @@ tr:hover {
 .status-pending{
     color: rgb(219, 0, 0);
     font-weight: semibold;
+}
+.status-pending:hover{
+    color: rgb(255, 121, 121);
 }
 .status-paid{
     font-weight: semibold;

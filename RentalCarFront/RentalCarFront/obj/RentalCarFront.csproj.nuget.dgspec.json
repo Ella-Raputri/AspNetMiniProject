@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\RentalCarFront.csproj": {}
+    "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\RentalCarFront.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\RentalCarFront.csproj": {
+    "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\RentalCarFront.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\RentalCarFront.csproj",
+        "projectUniqueName": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\RentalCarFront.csproj",
         "projectName": "RentalCarFront",
-        "projectPath": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\RentalCarFront.csproj",
+        "projectPath": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\RentalCarFront.csproj",
         "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ASPNet_MiniProject\\RentalCarFront\\RentalCarFront\\obj\\",
+        "outputPath": "C:\\Users\\Asus\\Documents\\Programming\\IT_DIV\\ELLA RAPUTRI__2702298154_ASP.NET\\RentalCarFront\\RentalCarFront\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

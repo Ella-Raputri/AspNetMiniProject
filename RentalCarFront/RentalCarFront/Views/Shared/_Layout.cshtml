@@ -3,7 +3,6 @@
 @using Microsoft.AspNetCore.Http
 
 @{
-    // Use a code block to retrieve session variables
     var customerId = Context.Session.GetString("CustomerId");
     var customerName = Context.Session.GetString("CustomerName");
 }
@@ -78,6 +77,7 @@
             transition: 0.3s;
             padding-top: 60px;
             box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+            z-index: 10;
         }
 
         #sidebar a {
@@ -131,6 +131,7 @@
             <div class="navbar-links">
                 <a id='loginButton' asp-area="" asp-controller="User" asp-action="Login">Login</a>
                 <a id='registerButton' asp-area="" asp-controller="User" asp-action="Register">Register</a>
+                <a id="logoutButton" style="display:none;" href="#" onclick="logout()">Logout</a>
             </div>
         </nav>
     </header>
@@ -163,6 +164,7 @@
                 document.getElementById('userGreeting').innerText = `Hi, ${customerName}!`;
                 document.getElementById('loginButton').style.display = 'none';
                 document.getElementById('registerButton').style.display = 'none';
+                document.getElementById('logoutButton').style.display = 'inline-block';
             }
         });
         function openSidebar() {
@@ -171,6 +173,16 @@
 
         function closeSidebar() {
             document.getElementById('sidebar').classList.remove('sidebar-open');
+        }
+        function logout() {
+            sessionStorage.removeItem('CustomerName');
+            sessionStorage.removeItem('CustomerId');
+            sessionStorage.removeItem('CustomerEmail');
+            document.getElementById('userGreeting').innerText = '';
+            document.getElementById('loginButton').style.display = 'inline-block';
+            document.getElementById('registerButton').style.display = 'inline-block';
+            document.getElementById('logoutButton').style.display = 'none';
+            window.location.href = '@Url.Action("Index", "Home")';
         }
     </script>
     @await RenderSectionAsync("Scripts", required: false)
