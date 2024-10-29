@@ -23,8 +23,8 @@
     <h2>Select Payment Method</h2>
     <select id="paymentMethod">
         <option value="Cash">Cash</option>
-        <option value="Credit">Credit</option>
-        <option value="Debit">Debit</option>
+        <option value="Credit">Credit Card</option>
+        <option value="Debit">Debit Card</option>
     </select>
     <button onclick="confirmPayment()">Confirm</button>
     <button onclick="closeModal()">Cancel</button>
@@ -38,6 +38,7 @@
     <script>
         const userId = sessionStorage.getItem('CustomerId'); 
         let selectedRentalId = null;
+        let totalPrice = null;
 
         async function fetchRentalHistory() {
             try {
@@ -60,7 +61,7 @@
                                 <td>${item.carName}</td>
                                 <td>Rp ${item.pricePerDay.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</td>
                                 <td>${item.totalDays}</td>
-                                <td>Rp ${item.totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</td>
+                                <td class="totalPrice">Rp ${item.totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</td>
                                 <td class="${item.status ? 'status-paid' : 'status-pending'}">${item.status ? 'Sudah Dibayar' : 'Belum Dibayar'}</td>
                             </tr>
                         `;
@@ -82,28 +83,26 @@
 
                 if (statusCell) { 
                     selectedRentalId = row.getAttribute('data-rental-id'); // Save rental ID
+                    totalPrice = row.querySelector('.totalPrice').textContent.replace(/[^0-9]/g, '');
                     console.log('Rental ID:', selectedRentalId);
-                    openModal(); // Show modal for payment selection
+                    openModal(); 
                 }
             }
         });
 
-        // Open the payment method modal
         function openModal() {
             document.getElementById('paymentModal').style.display = 'block';
         }
 
-        // Close the payment method modal
         function closeModal() {
             document.getElementById('paymentModal').style.display = 'none';
-            selectedRentalId = null; // Clear selected rental ID if modal is closed without confirming
+            selectedRentalId = null; 
         }
 
-        // Confirm payment and post payment data to backend
         async function confirmPayment() {
             const paymentMethod = document.getElementById('paymentMethod').value;
-            const paymentDate = new Date().toISOString(); // Current date as payment date
-            const amount = 1000; // Replace with actual amount or calculate as needed
+            const paymentDate = new Date().toISOString(); 
+            const amount = parseInt(totalPrice);; 
 
             // Construct payment request payload
             const paymentData = {
@@ -125,7 +124,6 @@
                 if (response.ok) {
                     console.log('Payment successful:', result);
                     closeModal();
-                    // Optional: Refresh rental history to update status
                     fetchRentalHistory();
                 } else {
                     console.error('Payment failed:', result.Data);

@@ -1,6 +1,175 @@
 ﻿@{
-    ViewData["Title"] = "Kontak Kami";
+    ViewData["Title"] = "Informasi Tentang Kami";
 }
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js" crossorigin="anonymous"></script>
 <h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+
+<h2 id='contactTitle'>Kontak Kami</h2>
+<div id="contactForm">
+    <table>
+        <tr>
+            <td><i class="fas fa-map-marker-alt colored"></i></td>
+            <td>Jl.Contoh Blok 100, Kota Contoh, 12345</td>
+        </tr>
+        <tr>
+            <td><i class="fas fa-phone-alt colored"></i></td>
+            <td>0812-3456-789</td>
+        </tr>
+        <tr>
+            <td><i class="fas fa-envelope colored"></i></td>
+            <td>examplerentcar@mail.com</td>
+        </tr>
+        <tr>
+            <td><i class="fas fa-globe colored"></i></td>
+            <td><a href="www.examplerentcar.com">www.examplerentcar.com</a></td>
+        </tr>
+    </table>    
+</div>
+
+<div id="faqs">
+    <h2>FAQ</h2>
+    <div class="accordion">
+        <div class="accordion__question">
+            <p>Is there any payment methods beside the three available one?</p>
+        </div>
+        <div class="accordion__answer">
+            <p>There is no other methods for now.</p>
+        </div>
+    </div>
+    <div class="accordion">
+        <div class="accordion__question">
+            <p>Is RentCar available in other city?</p>
+        </div>
+        <div class="accordion__answer">
+            <p>No, we only have one branch for now.</p>
+        </div>
+    </div>
+    <div class="accordion">
+        <div class="accordion__question">
+            <p>Does RentCar have membership discount?</p>
+        </div>
+        <div class="accordion__answer">
+            <p>We do not have any membership system for now.</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.querySelectorAll(".accordion").forEach((accordion) => {
+        const answer = accordion.querySelector(".accordion__answer");
+        const question = accordion.querySelector(".accordion__question");
+
+        // Set initial max-height to 0
+        answer.style.maxHeight = "0px";
+
+        // Toggle max-height to create a sliding effect
+        question.addEventListener("click", () => {
+            if (answer.style.maxHeight === "0px") {
+                answer.style.maxHeight = answer.scrollHeight + "px";
+            } else {
+                answer.style.maxHeight = "0px";
+            }
+        });
+    });
+</script>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f5eff9;
+}
+
+h1 {
+    text-align: center;
+    color: #4a4a4a;
+    margin-bottom: 60px;
+}
+
+h2{
+    color: #8e8e8e;    
+}
+
+#contactTitle{
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contactForm {
+    margin-left:auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    background-color: #fffeff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    max-width: 90%;
+}
+
+#contactForm td {
+    border: none; 
+    padding: 10px; 
+    text-align: left;
+}
+
+#contactForm a:hover{
+    color: #b8a0ff
+}
+
+.colored{
+    color: rgb(89, 10, 159);
+    font-size: 18px;
+}
+
+#faqs{
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    max-width: 90%;
+}
+
+#faqs h2{
+    margin-top: 100px;
+}
+
+.accordion {
+    width: 70%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background: rgb(255, 255, 255);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+ 
+.accordion__question {
+    cursor: pointer;
+    padding: 5px;
+    font-size: 16px;
+    padding-left: 10px;
+}
+ 
+.accordion__answer {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease-out;
+    background: rgb(89, 10, 159);
+    border-radius: 10px;
+    padding: 5px;
+    padding-left: 10px;
+    color: #fff;
+    font-size: 16px;
+}
+</style>

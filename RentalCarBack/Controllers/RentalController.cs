@@ -489,6 +489,12 @@ namespace RentalCarBack.Controllers
                 _context.TrPayment.Add(newPaymentData);
                 await _context.SaveChangesAsync();
 
+                var rental = await _context.TrRental.FirstOrDefaultAsync(r => r.RentalId == request.RentalId);
+                if (rental != null) {
+                    rental.PaymentStatus = true;
+                    await _context.SaveChangesAsync();
+                }
+
                 var response = new ApiResponse<string> {
                     StatusCode = StatusCodes.Status201Created,
                     RequestMethod = HttpContext.Request.Method,
