@@ -156,11 +156,9 @@ namespace RentalCarBack.Controllers
                 });
             }
 
-            // Attempt to find the customer by name (or email if that’s the intended logic)
             var customer = await _context.MsCustomer
-                .FirstOrDefaultAsync(c => c.Email == request.Email); // Ensure you want to use Name for login
+                .FirstOrDefaultAsync(c => c.Email == request.Email); 
 
-            // Check if the customer exists
             if (customer == null)
             {
                 return Unauthorized(new ApiResponse<LoginResponse>
@@ -174,7 +172,6 @@ namespace RentalCarBack.Controllers
                 });
             }
 
-            // Validate the password
             bool isPasswordValid = false;
             if (customer.Password.StartsWith("$2a$") || customer.Password.StartsWith("$2b$") || customer.Password.StartsWith("$2y$"))
             {
@@ -185,7 +182,6 @@ namespace RentalCarBack.Controllers
                 isPasswordValid = request.Password == customer.Password;
             }
 
-            // If password is invalid, return unauthorized
             if (!isPasswordValid)
             {
                 return Unauthorized(new ApiResponse<LoginResponse>
@@ -199,25 +195,20 @@ namespace RentalCarBack.Controllers
                 });
             }
 
-            // Create claims for the authenticated user
             var claims = new List<Claim>
             {
                 new Claim(ClaimTypes.NameIdentifier, customer.CustomerId),
                 new Claim(ClaimTypes.Name, customer.Name)
             };
 
-            // Create claims identity and principal
             var claimsIdentity = new ClaimsIdentity(claims, "Cookies");
             var claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
 
-            // Sign in the user
             await HttpContext.SignInAsync("Cookies", claimsPrincipal);
             
-            // Set session values
             HttpContext.Session.SetString("CustomerId", customer.CustomerId);
             HttpContext.Session.SetString("CustomerEmail", customer.Email);
 
-            // Return success response with structured message
             return Ok(new ApiResponse<LoginResponse>
             {
                 StatusCode = StatusCodes.Status200OK,
@@ -286,8 +277,7 @@ namespace RentalCarBack.Controllers
         public async Task<ActionResult<ApiResponse<GetCarInformation>>> GetCarInfo(string customerName, 
             string id, DateTime dateStart, DateTime dateEnd)
         {
-            // var customerName = HttpContext.Session.GetString("CustomerName");
-            // var customerId = HttpContext.Session.GetString("CustomerId");
+            
 
             if (string.IsNullOrEmpty(customerName))
             {
@@ -397,11 +387,11 @@ namespace RentalCarBack.Controllers
                     (rental, payments) => new { rental, payments }
                 )
                 .SelectMany(
-                    x => x.payments.DefaultIfEmpty(), // This ensures a left join
+                    x => x.payments.DefaultIfEmpty(), 
                     (x, payment) => new
                     {
                         x.rental,
-                        PaymentDate = payment.PaymentDate // This will be null if no payment exists
+                        PaymentDate = payment.PaymentDate 
                     }
                 )
                 .Join(
@@ -452,7 +442,6 @@ namespace RentalCarBack.Controllers
                     });
                 }
 
-                // Get last payment ID
                 var lastPaymentID = await _context.TrPayment
                     .OrderByDescending(x => x.PaymentId)
                     .Select(x => x.PaymentId)
@@ -460,9 +449,8 @@ namespace RentalCarBack.Controllers
 
                 int num = 0;
 
-                // Check if lastPaymentID exists and is valid
                 if (!string.IsNullOrEmpty(lastPaymentID) && lastPaymentID.StartsWith("PY")) {
-                    var currPaymentID = lastPaymentID.Substring(2); // Remove "PY" prefix
+                    var currPaymentID = lastPaymentID.Substring(2); 
                     if (int.TryParse(currPaymentID, out num)) {
                         num += 1;
                     } else {
@@ -473,7 +461,7 @@ namespace RentalCarBack.Controllers
                         });
                     }
                 } else {
-                    num = 1; // Start from 1 if no previous ID is found or format is invalid
+                    num = 1; 
                 }
 
                 var newPaymentID = num.ToString("D3");

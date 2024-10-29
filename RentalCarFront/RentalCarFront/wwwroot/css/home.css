@@ -12,7 +12,7 @@
   justify-content: flex-start; 
   margin-left: 1rem;
   margin-right: 1rem;
-  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  flex-wrap: wrap; 
 }
 
 .filter div {

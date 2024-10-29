@@ -32,7 +32,7 @@
 
         <div class="details"> 
             <h2>Informasi Mobil</h2>
-            <div class="table-container"> <!-- Added div for responsiveness -->
+            <div class="table-container"> 
                 <table>
                     <tbody>
                         <tr>
@@ -85,7 +85,6 @@
             const pickUpDateObj = new Date(pickUpDate);
             const returnDateObj = new Date(returnDate);
 
-            // Format the dates using Intl.DateTimeFormat
             const formattedPickUpDate = new Intl.DateTimeFormat('id-ID', options).format(pickUpDateObj);
             const formattedReturnDate = new Intl.DateTimeFormat('id-ID', options).format(returnDateObj);
 
@@ -105,10 +104,9 @@
                     credentials: 'include'
                 });
 
-                const text = await response.text(); // Get raw response as text
-                // console.log('Raw response:', text); // Log the response
+                const text = await response.text(); 
 
-                const result = JSON.parse(text); // Parse the text
+                const result = JSON.parse(text); 
                 if (response.ok) {
                     displayCarDetails(result.data, rangeTanggal);
                 } else {
@@ -144,7 +142,6 @@
             const carIdsString = sessionStorage.getItem('CarIds');
             console.log(carIdsString);
 
-            // Check if carIdsString exists and is not empty
             if (!carIdsString) {
                 alert('No cars available to navigate.');
                 return;
@@ -175,7 +172,7 @@
             }
 
             sessionStorage.setItem('SelectedCarId', carIds[newIndex]);
-            fetchCarDetails(); // Re-fetch details for the new car
+            fetchCarDetails(); 
         }
 
         async function sewaCar() {
@@ -189,7 +186,7 @@
                 RentalDate: rentalDate,
                 ReturnDate: returnDate,
                 TotalPrice: totalPrice,
-                PaymentStatus: false, // Set this based on your logic, true or false
+                PaymentStatus: false, 
                 CustomerId: customerId,
                 CarId: carId
             };
@@ -206,8 +203,8 @@
 
                 const result = await response.json();
                 if (response.ok) {
-                    alert(result.data); // Display success message
-                    window.location.href = '/Riwayat/Index'; // Redirect to the history page
+                    alert(result.data); 
+                    window.location.href = '/Riwayat/Index'; 
                 } else {
                     console.error('Error during booking:', result);
                     alert('Booking failed: ' + result.data);
@@ -218,9 +215,6 @@
             }
         }
 
-
-
-        // Fetch the car details when the page loads
         window.onload = fetchCarDetails;
     </script>
 

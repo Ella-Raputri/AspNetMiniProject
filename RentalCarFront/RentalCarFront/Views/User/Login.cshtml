@@ -143,12 +143,11 @@
                 console.log(result);
 
                 if (response.ok) {
-                    // Redirect or perform other actions on successful login
                     sessionStorage.setItem('CustomerName', result.data.userData.name);
                     sessionStorage.setItem('CustomerEmail', result.data.userData.email);
                     sessionStorage.setItem('CustomerId', result.data.userData.customerId);
                     
-                    window.location.href = '/Home/Index'; // Change this as needed
+                    window.location.href = '/Home/Index'; 
 
                 } else {
                     document.getElementById('loginMessage').innerText = result.message || 'Invalid email or password. Register your account if no account yet.';

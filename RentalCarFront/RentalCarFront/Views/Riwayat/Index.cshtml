@@ -82,7 +82,7 @@
                 const statusCell = row.querySelector('.status-pending');
 
                 if (statusCell) { 
-                    selectedRentalId = row.getAttribute('data-rental-id'); // Save rental ID
+                    selectedRentalId = row.getAttribute('data-rental-id'); 
                     totalPrice = row.querySelector('.totalPrice').textContent.replace(/[^0-9]/g, '');
                     console.log('Rental ID:', selectedRentalId);
                     openModal(); 
@@ -104,7 +104,6 @@
             const paymentDate = new Date().toISOString(); 
             const amount = parseInt(totalPrice);; 
 
-            // Construct payment request payload
             const paymentData = {
                 PaymentDate: paymentDate,
                 Amount: amount,
